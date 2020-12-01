@@ -261,8 +261,8 @@
         $accent_color = get_theme_mod( 'accent_color', '' );
         if ( ! empty( $accent_color ) ) {
         ?>
-            h1, h2, h3, h4, a #cssmenu ul li.current_page_item > span a, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, a, .nav-link {
-                color: <?php echo $accent_color; ?>;
+            h1, h2, h4, a #cssmenu ul li.current_page_item > span a, .abstract p, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, a, .nav-link:hover {
+                color: <?php echo $accent_color; ?> !important;
             }
 
             .card-box .card-box-action, #social-footer {
@@ -270,11 +270,15 @@
             }
             
             #cssmenu ul ul::before {
-                border-bottom: solid 6px <?php echo $accent_color; ?>;
+                border-bottom: solid 6px <?php echo $accent_color; ?> !important;
             }
             
             #cssmenu ul ul {
-                border-top: 5px solid <?php echo $accent_color; ?>;
+                border-top: 5px solid <?php echo $accent_color; ?> !important;
+            }
+
+            ul.menu li a:hover {
+                border-left: 5px solid <?php echo $accent_color; ?> !important;
             }
         <?php
         }

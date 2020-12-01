@@ -102,6 +102,11 @@ a:hover {
   line-height: 1.8rem;
 }
 
+/* Text */
+.text p {
+  hyphens: auto;
+}
+
 /* override wp styles */
 .wp-block-embed {
   margin: 0;
