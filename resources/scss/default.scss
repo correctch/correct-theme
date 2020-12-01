@@ -1,9 +1,10 @@
 /* Variablen */
-$left-col: 4;
+$left-col: 5;
 $right-col: 6;
 
 @import "menu";
 @import "overview";
+@import "accordion";
 
 :root {
   --green: #3a9b5a;
@@ -46,16 +47,14 @@ h3 {
 
 .row {
   display: flex;
+  gap: 3rem;
 }
 
 .img-section {
   flex: $left-col;
-  float: left;
-  margin-right: 3rem;
 }
 
 .content {
-  float: left;
   flex: $right-col;
   padding-bottom: 120px;
   position: relative;
@@ -103,57 +102,6 @@ a:hover {
   line-height: 1.8rem;
 }
 
-/* Block Accordion */
-.accordion {
-  margin-bottom: 15px;
-}
-
-.accordion-header {
-  color: white;
-  background: var(--grey);
-  cursor: pointer;
-  position: relative;
-}
-
-.accordion-action {
-  font-size: 1.75rem;
-  line-height: 1;
-  padding: 0px 8.5px;
-  display: inline-block;
-  transition: 0.4s;
-}
-
-.accordion-title {
-  padding: 5px 15px;
-  border-left: solid white 10px;
-  position: absolute;
-  transition: 0.4s;
-}
-
-.accordion-content {
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  padding: 23px 16px 23px 57px;
-  margin-top: 8px;
-}
-
-.accordion-content p:first-child {
-  margin-top: 0px;
-}
-
-.accordion-content p:last-child {
-  margin-bottom: 0px;
-}
-
-.accordion.open .accordion-action {
-  transform: rotate(45deg);
-}
-
-.accordion-header:hover > .accordion-title {
-  padding-left: 20px;
-}
-
 /* override wp styles */
 .wp-block-embed {
   margin: 0;
@@ -179,9 +127,11 @@ a:hover {
 }
 
 @media only screen and (max-width: 1000px) {
+  .row {
+    gap: 2rem;
+  }
   .img-section {
     flex: 3;
-    margin-right: 2rem;
   }
 }
 
@@ -193,7 +143,6 @@ a:hover {
 
   .img-section {
     flex: 0;
-    margin-right: 0px;
   }
 
   .logo {
