@@ -14,7 +14,7 @@
       <?php 
       if ( is_page() && $post->post_parent ) {
         $children = get_children(['post_parent' => $post->post_parent]);
-        var_dump($chilren);
+        var_dump($children);
       } else {
         wp_nav_menu([
           'menu' => 'main', 

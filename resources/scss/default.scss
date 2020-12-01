@@ -5,6 +5,7 @@ $right-col: 6;
 @import "menu";
 @import "overview";
 @import "accordion";
+@import "blog";
 
 :root {
   --green: #3a9b5a;
@@ -28,6 +29,10 @@ body {
   margin: 0px;
   font-family: 'Assistant', sans-serif;
   font-weight: 600;
+}
+
+h2 {
+  font-size: 35px;
 }
 
 h3 {
