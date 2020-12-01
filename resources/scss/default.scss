@@ -1,4 +1,9 @@
+/* Variablen */
+$left-col: 4;
+$right-col: 6;
+
 @import "menu";
+@import "overview";
 
 :root {
   --green: #3a9b5a;
@@ -44,15 +49,14 @@ h3 {
 }
 
 .img-section {
-  flex: 5;
+  flex: $left-col;
   float: left;
   margin-right: 3rem;
 }
 
 .content {
-  width: 43%;
   float: left;
-  flex: 4;
+  flex: $right-col;
   padding-bottom: 120px;
   position: relative;
 }
@@ -97,88 +101,6 @@ a:hover {
   font-weight: 600;
   padding: 1.6rem 0 1rem;
   line-height: 1.8rem;
-}
-
-/**
-* overview page
-*/
-.menu-symbol {
-  position: absolute;
-  right: 0px;
-  top: 3rem;
-}
-
-.overview > .card {
-  background: var(--grey);
-  height: 350px;
-  margin: 0px 7.5px 15px;
-  display: block;
-  float: left;
-  position: relative;
-  transition: 0.5s;
-}
-
-.overview > .card.card-rows-2 {
-  width: 50%;
-  width: calc(50% - 10px);
-}
-
-.overview > .card.card-rows-2:nth-child(2n + 1) {
-  margin-left: 0px;
-}
-
-
-.overview > .card.card-rows-2:nth-child(2n + 2) {
-  margin-right: 0px;
-}
-
-.overview > .card.card-rows-3 {
-  width: 33.33%;
-  width: calc(33.33% - 10px);
-
-}
-
-.overview > .card.card-rows-3:nth-child(3n + 1) {
-  margin-left: 0px;
-}
-
-
-.overview > .card.card-rows-3:nth-child(3n + 3) {
-  margin-right: 0px;
-}
-
-.overview > .card > .card-mask-hover, .overview > .card:hover > .card-mask  {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.overview > .card:hover > .card-mask-hover, .overview > .card > .card-mask  {
-  opacity: 1;
-}
-
-.overview > .card > .card-hover-img {
-  filter: grayscale(100%);
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: all 1s ease-in-out;
-}
-
-.overview > .card:hover > .card-hover-img {
-  filter: grayscale(0%);
-}
-
-.overview > .card > .card-title {
-  color: white;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-
-.overview > .card > .card-mask, .overview > .card > .card-mask-hover {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
 }
 
 /* Block Accordion */
