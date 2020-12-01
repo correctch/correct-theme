@@ -71,24 +71,6 @@
             'panel'    => 'text_blocks',
             'priority' => 10
         ) );
-
-        $wp_customize->add_section( 'footer1_text' , array(
-            'title'    => __('Footer Spalte 1'),
-            'panel'    => 'text_blocks',
-            'priority' => 10
-        ) );
-
-        $wp_customize->add_section( 'footer2_text' , array(
-            'title'    => __('Footer Spalte 2'),
-            'panel'    => 'text_blocks',
-            'priority' => 11
-        ) );
-		
-		$wp_customize->add_section( 'footer3_text' , array(
-            'title'    => __('Footer Spalte 3'),
-            'panel'    => 'text_blocks',
-            'priority' => 11
-        ) );
 		
 		$wp_customize->add_section( 'footer_zeile' , array(
             'title'    => __('Footer Zeile'),
@@ -100,21 +82,6 @@
         $wp_customize->add_setting( 'impressum_text_block', array(
             'default'           => __(''),
             'sanitize_callback' => 'sanitize_text'
-        ) );
-
-        $wp_customize->add_setting( 'footer1_text_block', array(
-			'default'           => __(''),
-			'sanitize_callback' => 'sanitize_text'
-        ) );
-
-        $wp_customize->add_setting( 'footer2_text_block', array(
-			'default'           => __(''),
-			'sanitize_callback' => 'sanitize_text'
-        ) );
-		
-		$wp_customize->add_setting( 'footer3_text_block', array(
-			'default'           => __(''),
-			'sanitize_callback' => 'sanitize_text'
         ) );
 		
 		$wp_customize->add_setting( 'footer_zeile_block', array(
@@ -135,42 +102,6 @@
             )
         );
 
-        $wp_customize->add_control( new WP_Customize_Control(
-            $wp_customize,
-            'footer1_text',
-                array(
-                    'label'    => __('Footer Spalte 1'),
-                    'section'  => 'footer1_text',
-                    'settings' => 'footer1_text_block',
-                    'type'     => 'textarea'
-                )
-            )
-        );
-
-        $wp_customize->add_control( new WP_Customize_Control(
-            $wp_customize,
-            'footer2_text',
-                array(
-                    'label'    => __('Footer Spalte 2'),
-                    'section'  => 'footer2_text',
-                    'settings' => 'footer2_text_block',
-                    'type'     => 'textarea'
-                )
-            )
-        );
-		
-		$wp_customize->add_control( new WP_Customize_Control(
-            $wp_customize,
-            'footer3_text',
-                array(
-                    'label'    => __('Footer Spalte 3'),
-                    'section'  => 'footer3_text',
-                    'settings' => 'footer3_text_block',
-                    'type'     => 'textarea'
-                )
-            )
-        );
-		
 		$wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'footer4_text',
@@ -261,7 +192,7 @@
         $accent_color = get_theme_mod( 'accent_color', '' );
         if ( ! empty( $accent_color ) ) {
         ?>
-            h1, h2, h4, a #cssmenu ul li.current_page_item > span a, .abstract p, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, a, .nav-link:hover {
+            h1, h2, h4, a #cssmenu ul li.current_page_item > span a, .abstract p, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a {
                 color: <?php echo $accent_color; ?> !important;
             }
 
@@ -277,7 +208,7 @@
                 border-top: 5px solid <?php echo $accent_color; ?> !important;
             }
 
-            ul.menu li a:hover {
+            ul.menu li:hover {
                 border-left: 5px solid <?php echo $accent_color; ?> !important;
             }
         <?php

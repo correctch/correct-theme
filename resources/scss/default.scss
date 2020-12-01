@@ -37,6 +37,10 @@ h3 {
   margin: 3rem 0px 1.5rem;
 }
 
+strong {
+  font-weight: bold;
+}
+
 /**
 * Layout
 */
@@ -107,9 +111,22 @@ a:hover {
   hyphens: auto;
 }
 
+/* Footer */
+#footer {
+  margin-top: -40px;
+}
+
+#footer .content {
+  padding-bottom: 0px;
+}
+
 /* override wp styles */
-.wp-block-embed {
+.wp-block-embed, .wp-block-image {
   margin: 0;
+}
+
+.wp-block-column p {
+  margin-top: 0px;
 }
 
 .wp-block-embed iframe {

@@ -30,9 +30,6 @@
       <div class="text">
         <?php the_content(null, true); ?>
       </div>
-      <div class="about">
-        <?php echo get_theme_mod( 'footer_zeile_block'); ?>
-      </div>
     <?php endwhile; endif; ?>
   </div>
 </div>
