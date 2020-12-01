@@ -1,0 +1,291 @@
+@import "menu";
+
+:root {
+  --green: #3a9b5a;
+  --grey: #9f9f9f;
+  --black: #111111;
+  --blue: #23588d;
+  --darker-blue: #0A2540;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 19px;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+  background: black;
+  color: white;
+  padding: 2px 1rem;
+  margin: 3rem 0px 1.5rem;
+}
+
+/**
+* Layout
+*/
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.img-section {
+  flex: 5;
+  float: left;
+  margin-right: 3rem;
+}
+
+.content {
+  width: 43%;
+  float: left;
+  flex: 4;
+  padding-bottom: 120px;
+  position: relative;
+}
+
+.img-section img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.about {
+  position: absolute;
+  bottom: 1rem;
+}
+
+/**
+* General html elements
+*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--darker-blue);
+  text-decoration: underline;
+}
+
+
+/* Page Abstract */
+.abstract p {
+  font-size: 1.65rem;
+  color: var(--green);
+  font-weight: 600;
+  padding: 1.6rem 0 1rem;
+  line-height: 1.8rem;
+}
+
+/**
+* overview page
+*/
+.menu-symbol {
+  position: absolute;
+  right: 0px;
+  top: 3rem;
+}
+
+.overview > .card {
+  background: var(--grey);
+  height: 350px;
+  margin: 0px 7.5px 15px;
+  display: block;
+  float: left;
+  position: relative;
+  transition: 0.5s;
+}
+
+.overview > .card.card-rows-2 {
+  width: 50%;
+  width: calc(50% - 10px);
+}
+
+.overview > .card.card-rows-2:nth-child(2n + 1) {
+  margin-left: 0px;
+}
+
+
+.overview > .card.card-rows-2:nth-child(2n + 2) {
+  margin-right: 0px;
+}
+
+.overview > .card.card-rows-3 {
+  width: 33.33%;
+  width: calc(33.33% - 10px);
+
+}
+
+.overview > .card.card-rows-3:nth-child(3n + 1) {
+  margin-left: 0px;
+}
+
+
+.overview > .card.card-rows-3:nth-child(3n + 3) {
+  margin-right: 0px;
+}
+
+.overview > .card > .card-mask-hover, .overview > .card:hover > .card-mask  {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.overview > .card:hover > .card-mask-hover, .overview > .card > .card-mask  {
+  opacity: 1;
+}
+
+.overview > .card > .card-hover-img {
+  filter: grayscale(100%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 1s ease-in-out;
+}
+
+.overview > .card:hover > .card-hover-img {
+  filter: grayscale(0%);
+}
+
+.overview > .card > .card-title {
+  color: white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.overview > .card > .card-mask, .overview > .card > .card-mask-hover {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+/* Block Accordion */
+.accordion {
+  margin-bottom: 15px;
+}
+
+.accordion-header {
+  color: white;
+  background: var(--grey);
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion-action {
+  font-size: 1.75rem;
+  line-height: 1;
+  padding: 0px 8.5px;
+  display: inline-block;
+  transition: 0.4s;
+}
+
+.accordion-title {
+  padding: 5px 15px;
+  border-left: solid white 10px;
+  position: absolute;
+  transition: 0.4s;
+}
+
+.accordion-content {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding: 23px 16px 23px 57px;
+  margin-top: 8px;
+}
+
+.accordion-content p:first-child {
+  margin-top: 0px;
+}
+
+.accordion-content p:last-child {
+  margin-bottom: 0px;
+}
+
+.accordion.open .accordion-action {
+  transform: rotate(45deg);
+}
+
+.accordion-header:hover > .accordion-title {
+  padding-left: 20px;
+}
+
+/* override wp styles */
+.wp-block-embed {
+  margin: 0;
+}
+
+.wp-block-embed iframe {
+  width: 100%;
+}
+
+/* responsive */
+@media only screen and (max-width: 1400px) {
+  .logo {
+    margin-left: 15px;
+  }
+
+  .img-section {
+    flex: 4;
+  }
+
+  .content {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .img-section {
+    flex: 3;
+    margin-right: 2rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    max-width: 600px;
+    margin: 0px auto;
+  }
+
+  .img-section {
+    flex: 0;
+    margin-right: 0px;
+  }
+
+  .logo {
+    margin-left: 0px;
+  }
+}
+
+
+@media only screen and (max-width: 630px) {
+  * {
+    font-size: 16px;
+  }
+
+  .container {
+    margin: 0px 15px;
+  }
+}
