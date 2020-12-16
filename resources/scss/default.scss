@@ -50,22 +50,17 @@ strong {
 * Layout
 */
 .container {
-  max-width: 1350px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.row {
-  display: flex;
-  gap: 3rem;
-}
-
-.img-section {
+.img-section.col {
   flex: $left-col;
 }
 
-.content {
+.content.col {
   flex: $right-col;
-  padding-bottom: 120px;
+  padding-bottom: 2rem;
   position: relative;
 }
 
@@ -81,6 +76,19 @@ strong {
 .about {
   position: absolute;
   bottom: 1rem;
+}
+
+/**
+* Cols
+ */
+.row {
+  display: flex;
+  gap: 3rem;
+}
+
+.col {
+  flex: 1;
+  flex-basis: auto;
 }
 
 /**
@@ -101,6 +109,18 @@ a:hover {
   text-decoration: underline;
 }
 
+.button {
+  background: #f1a233;
+  color: #fff;
+  padding: 5px 10px;
+  transition: all 0.5s ease-out;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 
 /* Page Abstract */
 .abstract p {
@@ -119,11 +139,40 @@ a:hover {
 
 /* Footer */
 #footer {
-  margin-top: -40px;
+  margin: 1rem 0px 0px;
+  padding: 2.5rem 0px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+#footer * {
+  color: #fff;
 }
 
 #footer .content {
   padding-bottom: 0px;
+}
+
+#footer .logo {
+  position: static;
+}
+
+#footer .col p:first-child {
+  margin-top: 0px;
+}
+
+#footer .link {
+  color: #fff !important;
+}
+
+.social-icon {
+  margin-right: 1rem;
+}
+
+.social-icon img {
+  width: auto;
+  height: 40px;
 }
 
 /* override wp styles */

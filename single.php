@@ -11,13 +11,6 @@
     </div>
     <div class="content col">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <?php
-                wp_nav_menu([
-                    'menu' => 'main',
-                    'container_id' => 'mainmenu',
-                    'walker' => new CSS_Menu_Maker_Walker()
-                ]);
-            ?>
             <h2 id="post-title"><?php the_title(); ?></h2>
             <div id="meta">
                 <p>erstellt am: <?php the_date('d.m.Y'); ?> |
