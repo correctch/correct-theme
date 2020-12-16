@@ -29,6 +29,13 @@
 					the_custom_logo();
 				} ?>
 			</div>
+            <?php
+                wp_nav_menu([
+                    'menu' => 'main',
+                    'container_id' => 'mainmenu',
+                    'walker' => new CSS_Menu_Maker_Walker()
+                ]);
+            ?>
 			<button class="menu-togle"></button>
 			<script>
 				$('button.menu-togle').on('click', function(){

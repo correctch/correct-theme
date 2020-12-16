@@ -10,13 +10,6 @@
             } ?>
         </div>
         <div class="content col">
-            <?php
-            wp_nav_menu([
-                'menu' => 'main',
-                'container_id' => 'mainmenu',
-                'walker' => new CSS_Menu_Maker_Walker()
-            ]);
-            ?>
             <h2><?php single_cat_title(); ?></h2>
             <div class="post-boxes">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

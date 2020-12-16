@@ -11,18 +11,11 @@
   </div>
   <div class="content col">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <?php 
+      <?php
       if ( is_page() && $post->post_parent ) {
         $children = get_children(['post_parent' => $post->post_parent]);
         var_dump($children);
-      } else {
-        wp_nav_menu([
-          'menu' => 'main', 
-          'container_id' => 'mainmenu',
-          'walker' => new CSS_Menu_Maker_Walker()
-        ]);
       }
-      
       ?>
       <div class="abstract">
         <?php echo get_extended(get_post()->post_content)['main'] ?>

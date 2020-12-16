@@ -200,18 +200,14 @@
                 background: <?php echo $accent_color; ?> !important;
             }
             
-            #cssmenu ul ul::before {
+            .menu-item-has-children > ul.nav-expand-content::before {
                 border-bottom: solid 6px <?php echo $accent_color; ?> !important;
             }
-            
-            #cssmenu ul ul {
+
+            .menu-item-has-children > ul.nav-expand-content {
                 border-top: 5px solid <?php echo $accent_color; ?> !important;
             }
-
-            ul.menu li:hover {
-                border-left: 5px solid <?php echo $accent_color; ?> !important;
-            }
-        <?php
+            <?php
         }
         
         $accent_color_light = get_theme_mod( 'accent_color_light', '' );
