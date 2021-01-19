@@ -18,20 +18,21 @@
                 if (!$facebook == "") {
                     ?>
                     <a class="social-icon" href="<?php echo $facebook ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/facebook.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/facebook_blue.png" alt="">
                     </a>
                     <?php
                 }
                 if (!$instagram == "") {
                     ?>
                     <a class="social-icon" href="<?php echo $instagram ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/instagram.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/instagram_blue.png" alt="">
                     </a>
                     <?php
                 }
                 ?>
             </div>
             <div class="col">
+                <p>Mehr von Correct: </p>
                 <?php echo get_theme_mod('footer_links_block'); ?>
             </div>
             <div class="col">
