@@ -2,10 +2,17 @@
 $left-col: 5;
 $right-col: 6;
 
+$container-max-width: 1200px;
+$text-container-max-width: 800px;
+
+$gap: 30px;
+$small-gap: 15px;
+
 @import "menu";
 @import "overview";
 @import "accordion";
 @import "blog";
+@import "footer";
 
 :root {
   --green: #3a9b5a;
@@ -17,7 +24,7 @@ $right-col: 6;
 
 * {
   box-sizing: border-box;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 html, body {
@@ -29,6 +36,7 @@ body {
   margin: 0px;
   font-family: 'Assistant', sans-serif;
   font-weight: 600;
+  background: #f8fafc;
 }
 
 h2 {
@@ -50,7 +58,12 @@ strong {
 * Layout
 */
 .container {
-  max-width: 1200px;
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.text-container {
+  max-width: $text-container-max-width;
   margin: 0 auto;
 }
 
@@ -83,12 +96,12 @@ strong {
  */
 .row {
   display: flex;
-  gap: 3rem;
+  gap: $gap;
 }
 
 .col {
   flex: 1;
-  flex-basis: auto;
+  flex-basis: 0;
 }
 
 /**
@@ -114,6 +127,7 @@ a:hover {
   color: #fff;
   padding: 5px 10px;
   transition: all 0.5s ease-out;
+  border-radius: 7px;
 }
 
 .button:hover {
@@ -135,35 +149,6 @@ a:hover {
 /* Text */
 .text p {
   hyphens: auto;
-}
-
-/* Footer */
-#footer {
-  margin: 4rem 0px 0px;
-  padding: 2.5rem 0px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-}
-
-#footer * {
-  color: #fff;
-}
-
-#footer .content {
-  padding-bottom: 0px;
-}
-
-#footer .logo {
-  position: static;
-}
-
-#footer .col p {
-  margin-top: 0px;
-}
-
-#footer .link {
-  color: #19598a !important;
 }
 
 .social-icon {

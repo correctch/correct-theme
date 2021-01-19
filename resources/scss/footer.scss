@@ -1,0 +1,80 @@
+/* Footer */
+#footer {
+  margin: 10rem 0px 0px;
+  padding: 7rem 0px 4rem;
+  position: relative;
+}
+
+#footer * {
+  color: #fff;
+}
+
+#footer .content {
+  padding-bottom: 0px;
+}
+
+#footer .logo {
+  position: static;
+}
+
+#footer h4 {
+  color: #ffffff !important;
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+#footer .col p {
+  margin-top: 0px;
+}
+
+#footer .link {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+#footer-blog-post {
+  background: #ffffff;
+  position: absolute;
+  top: -170px;
+  left: 50%;
+  margin-left: - $text-container-max-width/2;
+}
+
+#footer-blog-post img {
+  vertical-align: bottom;
+}
+
+#footer-blog-post p {
+  color: #333; // should be overwritten in functions.php
+  margin: 0.5rem 0 !important;
+  font-size: 22px;
+}
+
+#footer-blog-post span {
+  color: #333;
+}
+
+#footer-blog-post .text-part {
+  padding: $gap $gap $gap 0px;
+  position: relative;
+}
+
+#footer-blog-post .button {
+  position: absolute;
+  right: $gap;
+  bottom: $gap;
+}
+
+#footer-blog-post .date {
+  position: absolute;
+  left: 0;
+  bottom: $gap;
+  padding: 5px 0px;
+}
+
+#footer-blog-post .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

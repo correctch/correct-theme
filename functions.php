@@ -124,30 +124,17 @@ function register_theme_customizer($wp_customize)
         'label' => esc_html__('Accent color', 'theme'),
     )));
 
-    // Accent color Light
-    $wp_customize->add_setting('accent_color_light', array(
+    // Main color
+    $wp_customize->add_setting('main_color', array(
         'default' => '',
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'accent_color_light', array(
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_color', array(
         'section' => 'colors',
-        'label' => esc_html__('Accent color light', 'theme'),
+        'label' => esc_html__('Main color', 'theme'),
     )));
-
-    // Accent color dark
-    $wp_customize->add_setting('accent_color_dark', array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'accent_color_dark', array(
-        'section' => 'colors',
-        'label' => esc_html__('Accent color dark', 'theme'),
-    )));
-
 }
 
 add_action('customize_register', 'register_theme_customizer');
@@ -192,54 +179,32 @@ function theme_get_customizer_css()
     $accent_color = get_theme_mod('accent_color', '');
     if (!empty($accent_color)) {
         ?>
-        h1, h2, h4, a #cssmenu ul li.current_page_item > span a, .abstract p, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a, a.link {
-        color: <?php echo $accent_color; ?> !important;
+        #footer {
+        background: <?php echo $accent_color; ?> !important;
+        }
+        <?php
+    }
+
+    $main_color = get_theme_mod('main_color', '');
+    if (!empty($main_color)) {
+        ?>
+        h1, h2, h4, a #cssmenu ul li.current_page_item > span a, .abstract p, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a, a.link, #footer-blog-post .text-part p {
+            color: <?php echo $main_color; ?> !important;
         }
 
-        .card-box .card-box-action, #footer, .button {
-        background: <?php echo $accent_color; ?> !important;
+        .card-box .card-box-action, .button {
+        background: <?php echo $main_color; ?> !important;
         }
 
         .menu-item-has-children > ul.nav-expand-content::before {
-        border-bottom: solid 6px <?php echo $accent_color; ?> !important;
+        border-bottom: solid 6px <?php echo $main_color; ?> !important;
         }
 
         .menu-item-has-children > ul.nav-expand-content {
-        border-top: 5px solid <?php echo $accent_color; ?> !important;
+        border-top: 5px solid <?php echo $main_color; ?> !important;
         }
         <?php
     }
-
-    $accent_color_light = get_theme_mod('accent_color_light', '');
-    if (!empty($accent_color_light)) {
-        ?>
-        a:hover, #footer a.link:hover {
-        color: <?php echo $accent_color_light; ?>;
-        }
-
-        a:hover, #footer a.link:hover {
-        border-color: <?php echo $accent_color_light; ?>;
-        }
-
-        .card-box .card-box-action:hover, #cssmenu ul ul a:hover {
-        background: <?php echo $accent_color_light; ?> !important;
-        }
-        <?php
-    }
-
-    $accent_color_dark = get_theme_mod('accent_color_dark', '');
-    if (!empty($accent_color_dark)) {
-        ?>
-        #rest-area, .card-box, .button:hover {
-        background-color: <?php echo $accent_color_dark; ?> !important;
-        }
-
-        a#return-to-top * {
-        color: <?php echo $accent_color_dark; ?> !important;
-        }
-        <?php
-    }
-
     $css = ob_get_clean();
     return $css;
 }
