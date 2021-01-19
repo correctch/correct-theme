@@ -1,6 +1,6 @@
 {
   "name": "correct-theme",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Wordpress Theme für die correct.ch ag",
   "scripts": {
     "build": "webpack"
