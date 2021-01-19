@@ -188,7 +188,7 @@ function theme_get_customizer_css()
     $main_color = get_theme_mod('main_color', '');
     if (!empty($main_color)) {
         ?>
-        h1, h2, h4, a #cssmenu ul li.current_page_item > span a, .abstract p, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a, a.link, #footer-blog-post .text-part p {
+        h1, h2, h3, h4, a #cssmenu ul li.current_page_item > span a, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a, a.link, #footer-blog-post .text-part p {
             color: <?php echo $main_color; ?> !important;
         }
 
