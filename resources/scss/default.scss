@@ -8,7 +8,7 @@ $text-container-max-width: 800px;
 $gap: 30px;
 $small-gap: 15px;
 
-$lightgrey: #f8fafc;
+$lightgrey: #f0f0f0;
 
 @import "menu";
 @import "overview";
@@ -72,7 +72,7 @@ strong {
 
 #page-content {
   margin-top: -13rem;
-  background: #f8fafc;
+  background: $lightgrey;
   padding: $gap;
   z-index: 2;
   position: relative;
@@ -156,6 +156,11 @@ a:hover {
 
 .social-icon {
   margin-right: 1rem;
+}
+
+.social-icon:hover {
+  text-decoration: none;
+  filter: brightness(50%);
 }
 
 .social-icon img {
