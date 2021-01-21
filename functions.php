@@ -28,12 +28,8 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 function add_custom_sizes()
 {
     add_theme_support('post-thumbnails');
-    add_image_size('small-thumbnail', 260, 200, true);
-    add_image_size('nocrop-thumbnail', 260);
     add_image_size('full-image', 700);
     add_image_size('card', 400, 300, true);
-    add_image_size('banner-image', 2000, 500, array('left', 'center'));
-    add_image_size('small-banner-image', 700, 300, array('left', 'center'));
 }
 
 add_action('after_setup_theme', 'add_custom_sizes');
@@ -107,6 +103,7 @@ function register_theme_customizer($wp_customize)
     addCustomField($wp_customize, 'impressum_text', __('Impressum'),'textarea');
     addCustomField($wp_customize, 'instagram_link', __('Instagram Link'),'link');
     addCustomField($wp_customize, 'twitter_link', __('Twitter Link'),'link');
+    addCustomField($wp_customize, 'linkedin_link', __('Linkedin Link'),'link');
     addCustomField($wp_customize, 'facebook_link', __('Facebook Link'),'link');
     addCustomField($wp_customize, 'footer_adresse', __('Footer Adresse'),'textarea');
     addCustomField($wp_customize, 'footer_links', __('Footer Links'),'textarea');

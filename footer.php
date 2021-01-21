@@ -1,17 +1,5 @@
 <div id="footer">
-    <div id="footer-blog-post" class="text-container">
-        <div class="row">
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/examples/streit_md.jpg" alt="">
-            </div>
-            <div class="col text-part">
-                <span class="title">Blog</span>
-                <p>Fürsorgepflicht für Corona Massnahmen im mittelalterlichen Südfrankreich</p>
-                <span class="date">14.12.2020</span>
-                <a class="button">Beitrag lesen</a>
-            </div>
-        </div>
-    </div>
+    <?php require('includes/footer-post.php'); ?>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -23,10 +11,27 @@
                 <?php
                 $facebook = get_theme_mod('facebook_link_block');
                 $instagram = get_theme_mod('instagram_link_block');
-                if (!$facebook == "" || !$instagram == "") {
+                $linkedin = get_theme_mod('linkedin_link_block');
+                $twitter = get_theme_mod('twitter_link_block');
+
+                if (!$facebook == "" || !$instagram == "" || !$twitter == "" || !$linkedin == "") {
                     ?>
                     <h4>Social Media</h4>
                     <?php
+                }
+                if (!$linkedin == "") {
+                    ?>
+                    <a class="social-icon" href="<?php echo $linkedin ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/linkedin.png" alt="">
+                    </a>
+                    <?php
+                }
+                if (!$twitter == "") {
+                    ?>
+                <a class="social-icon" href="<?php echo $twitter ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/brands/twitter.png" alt="">
+                </a>
+                <?php
                 }
                 if (!$facebook == "") {
                     ?>
@@ -42,6 +47,8 @@
                     </a>
                     <?php
                 }
+
+
                 ?>
             </div>
             <div class="col">

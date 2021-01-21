@@ -1,6 +1,6 @@
 /* Footer */
 #footer {
-  margin: 10rem 0px 0px;
+  margin: 12rem 0px 0px;
   padding: 7rem 0px 4rem;
   position: relative;
 }
@@ -36,7 +36,7 @@
 #footer-blog-post {
   background: #ffffff;
   position: absolute;
-  top: -170px;
+  top: -200px;
   left: 50%;
   margin-left: - $text-container-max-width/2;
 }
@@ -47,8 +47,8 @@
 
 #footer-blog-post p {
   color: #333; // should be overwritten in functions.php
-  margin: 0.5rem 0 !important;
-  font-size: 22px;
+  padding: 1rem 0 !important;
+  font-size: 25px;
 }
 
 #footer-blog-post span {
@@ -75,6 +75,6 @@
 
 #footer-blog-post .title {
   position: absolute;
-  top: 0;
+  top: $small-gap;
   left: 0;
 }
