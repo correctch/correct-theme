@@ -20,7 +20,7 @@ if ( $the_query->have_posts() ) : ?>
                 <div class="col text-part">
                     <span class="title">Blog</span>
                     <p><?php the_title(); ?></p>
-                    <span class="date">14.12.2020</span>
+                    <span class="date"><?php the_date('d.m.Y'); ?></span>
                     <a class="button" href="<?php the_permalink(); ?>">Beitrag lesen</a>
                 </div>
             </div>

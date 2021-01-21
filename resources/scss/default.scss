@@ -126,7 +126,7 @@ a:hover {
 }
 
 .button {
-  background: #f1a233;
+  background: #8f2fb6;
   color: #fff;
   padding: 5px 10px;
   transition: all 0.5s ease-out;
@@ -134,8 +134,8 @@ a:hover {
 }
 
 .button:hover {
+  filter: brightness(70%);
   text-decoration: none;
-  color: #fff;
 }
 
 
