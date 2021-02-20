@@ -1,21 +1,13 @@
-/* Variablen */
-$left-col: 5;
-$right-col: 6;
-
-$container-max-width: 1200px;
-$text-container-max-width: 800px;
-
-$gap: 30px;
-$small-gap: 15px;
-
-$lightgrey: #f0f0f0;
-
+@import "vars";
 @import "menu";
 @import "overview";
 @import "accordion";
 @import "blog";
 @import "footer";
 @import "form";
+@import "media-text";
+@import "buttons";
+@import "offers";
 
 * {
   box-sizing: border-box;
@@ -125,20 +117,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.button {
-  background: #8f2fb6;
-  color: #fff;
-  padding: 5px 10px;
-  transition: all 0.5s ease-out;
-  border-radius: 7px;
-}
-
-.button:hover {
-  filter: brightness(70%);
-  text-decoration: none;
-}
-
-
 /* Page Abstract */
 .abstract p {
   font-size: 1.4rem;
@@ -197,7 +175,7 @@ a:hover {
 
 @media only screen and (max-width: 900px) {
   .container {
-    max-width: 600px;
+    //TODOmax-width: 600px;
     margin: 0px auto;
   }
 
@@ -220,3 +198,68 @@ a:hover {
     margin: 0px 15px;
   }
 }
+
+/*
+*
+* For pages that want text starting below banner
+*/
+
+.page-img-compact{
+  
+  #page-content{
+    margin-top:3em;
+    background: unset;
+  }
+}
+
+/**
+*
+* NAV V2
+*/
+/**
+$brown-title: #402e32;
+#header {
+  background: #e49d22;
+  padding: 1.5em 0;
+  position:sticky;
+  top:0;
+  z-index: 9999;
+  .menu > li a {
+    color: white;
+    &:hover{
+      color: $brown-title!important;
+    }
+  }
+  .menu > li.active a {
+    color: $brown-title!important;
+  }
+
+  .search-form-outer{
+    border: 1px solid white;
+    color: white
+
+    input::placeholder { 
+          color: white;
+          opacity: 1; 
+        }
+
+    input:-ms-input-placeholder { 
+          color: white;
+        }
+
+    input::-ms-input-placeholder { 
+          color: white;
+        }
+    i {
+      color: white;
+    }
+  }
+  .search-form-outer input {
+    color: white;
+  }
+
+  #menu-kontakt > li a {
+    color: #e49d22 !important;
+    background: white;
+  }
+}*/

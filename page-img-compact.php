@@ -1,5 +1,6 @@
+<?php /* Template Name: Bild über Text */ ?>
 <?php get_header(); ?>
-    <div class="container">
+    <div class="container page-img-compact">
         <div class="img-section">
             <?php if (has_post_thumbnail()) {
                 if (wp_is_mobile()) {
@@ -14,7 +15,7 @@
                 <?php
                 if (is_page() && $post->post_parent) {
                     $children = get_children(['post_parent' => $post->post_parent]);
-                    //var_dump($children);
+                    var_dump($children);
                 }
                 ?>
                 <h2 class="page-title">

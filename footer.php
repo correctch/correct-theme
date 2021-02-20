@@ -7,49 +7,8 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/img/logo-correct-white-<?php echo substr(get_theme_mod('accent_color', ''),1); ?>.png" alt="" class="logo">
                 </a>
             </div>
-            <div class="col">
-                <?php
-                $facebook = get_theme_mod('facebook_link_block');
-                $instagram = get_theme_mod('instagram_link_block');
-                $linkedin = get_theme_mod('linkedin_link_block');
-                $twitter = get_theme_mod('twitter_link_block');
-
-                if (!$facebook == "" || !$instagram == "" || !$twitter == "" || !$linkedin == "") {
-                    ?>
-                    <h4>Social Media</h4>
-                    <?php
-                }
-                if (!$linkedin == "") {
-                    ?>
-                    <a class="social-icon" href="<?php echo $linkedin ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/linkedin.png" alt="">
-                    </a>
-                    <?php
-                }
-                if (!$twitter == "") {
-                    ?>
-                <a class="social-icon" href="<?php echo $twitter ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/brands/twitter.png" alt="">
-                </a>
-                <?php
-                }
-                if (!$facebook == "") {
-                    ?>
-                    <a class="social-icon" href="<?php echo $facebook ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/facebook.png" alt="">
-                    </a>
-                    <?php
-                }
-                if (!$instagram == "") {
-                    ?>
-                    <a class="social-icon" href="<?php echo $instagram ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/instagram.png" alt="">
-                    </a>
-                    <?php
-                }
-
-
-                ?>
+            <div id="social-wrapper-desktop" class="col">
+                <?php require('includes/social-links.php'); ?>
             </div>
             <div class="col">
                 <h4>Links</h4>
@@ -64,6 +23,9 @@
             </div>
         </div>
     </div>
+     <div id="social-wrapper-mobile">
+                <?php require('includes/social-links.php'); ?>
+            </div>
 </div>
 <?php wp_footer(); ?>
 <script>
@@ -74,6 +36,55 @@
 
     $(".accordion > .accordion-content").hide();
     $(".accordion").removeClass("open");
+
+    $(function(){
+      $('.search-form-icon').click(function(){
+          if (!$('.search-form-wrapper').hasClass('active')) {
+            $('.search-form-wrapper').addClass('active');
+            $(this).html('<i class="fas fa-times"></i>');
+          }else{
+            $('.search-form-wrapper').removeClass('active');
+            $(this).html('<i class="fas fa-search"></i>');
+          }
+      });  
+    });
+
+
+    $('.mobile-menu .menu-item-has-children > span').append('<span class="next"><i class="fas fa-angle-right"></i></span>');
+
+    var navExpand = [].slice.call(document.querySelectorAll('.mobile-menu .menu-item-has-children'));
+    var backLink = '<li class="menu-item">\n\t<span><a class="nav-link nav-back-link" href="javascript:;">\n\t\t<span class="next"><i class="fas fa-angle-left"></i></span>Zurück\n\t</a></span>\n</li>';
+
+    navExpand.forEach(item => {
+        if (item.querySelector('.nav-expand-content') !== null) {
+            item.querySelector('.nav-expand-content').insertAdjacentHTML('afterbegin', backLink);
+        }
+        
+        if (item.querySelector('.next') !== null) {
+            item.querySelector('.next').addEventListener('click', () => item.classList.add('active'))
+        }
+        
+        if (item.querySelector('.nav-back-link') !== null) {
+            item.querySelector('.nav-back-link').addEventListener('click', () => item.classList.remove('active'));
+        }
+    });
+
+    // remove active class from all except first
+    $('.menu-item-home.active:not(:first)').removeClass("active");
+    $('.menu-item-home.current_page_item:not(:first)').removeClass("active");
+
+    //get first active 
+    $(function(){
+      $('.menu-togle').click(function(){
+             var elem = $('.current_page_item').first();
+                    //funktioniert
+                if (elem.parent().hasClass('nav-expand-content')) {
+                    $('.current-menu-parent').find('> span > .next').click();
+                }
+            });
+    })
+    console.log('Viel Spass auf <?php echo get_bloginfo( 'name' ); ?> wünscht webtheke.ch');
+
 </script>
 </body>
 </html>

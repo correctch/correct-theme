@@ -14,7 +14,7 @@
 	<meta name="msapplication-TileColor" content="#ffc40d" />
 	<meta name="theme-color" content="#ffffff" />
 	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@600;700&display=swap" rel="stylesheet">
-
+	<link href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet" type="text/css">
 	<?php wp_head(); ?>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -29,13 +29,7 @@
 					the_custom_logo();
 				} ?>
 			</div>
-            <?php
-                wp_nav_menu([
-                    'menu' => 'main',
-                    'container_id' => 'mainmenu',
-                    'walker' => new CSS_Menu_Maker_Walker()
-                ]);
-            ?>
+				<?php require('includes/nav.php'); ?>
 			<button class="menu-togle"></button>
 			<script>
 				$('button.menu-togle').on('click', function(){
@@ -43,4 +37,5 @@
 				});
 			</script>
 		</div>
+		<?php require('includes/mobile-nav.php'); ?>
 	</div>

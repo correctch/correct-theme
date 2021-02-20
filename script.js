@@ -26,3 +26,16 @@ $('#return-to-top').click(function() {      // When arrow is clicked
         scrollTop : 0                       // Scroll to top of body
     }, 500);
 });
+
+$(function(){
+  $('.search-form-icon').click(function(){
+      if (!$('.search-form-wrapper').hasClass('active');) {
+        $('.search-form-wrapper').addClass('active');
+        $(this).html('<i class="fas fa-times"></i>');
+      }else{
+        $('.search-form-wrapper').removeClass('active');
+        $(this).html('<i class="fas fa-search"></i>');
+      }
+  });
+
+});

@@ -2,10 +2,18 @@
  * Style für Blog Page und Single Posts
  */
 /* Category */
+
+$space-blog: 0.6em;
+$margin-side: 1em;
+
 .post-boxes {
   display: flex;
   flex-wrap: wrap;
   column-count: 3;
+  color: white;
+  gap: unset;
+  justify-content: space-between;
+  margin-bottom:2em;
 }
 
 .post-box.col {
@@ -14,16 +22,44 @@
   min-width: 30%;
   min-height: 690px;
   position: relative;
+  background: $background-blue;
+
+
+  .blog-info{
+    font-size:0.9em;
+    border-bottom: 1px solid white;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: $space-blog 0;
+  }
+
+  .post-box-title, p{
+    margin-left: $margin-side;
+    margin-right: $margin-side;
+  }
+
+  .post-box-title{
+    margin-top: $space-blog;
+    a {
+      color: white!important;
+      font-size:1.15em
+    }
+  }
 }
 
 .post-box-image-container .wp-post-image {
   width: 100%;
+  height: 12em;
+  object-fit: cover;
+  object-position: top;
 }
 
 .post-box-action {
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: $margin-side;
+  right: $margin-side;
+  padding-left: 1em!important;
+  padding-right: 1em!important;
 }
 
 /* Post */
@@ -43,4 +79,37 @@
 
 .author-img img {
   border-radius: 100%;
+}
+
+#loadMore {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 20px
+}
+
+//tablets
+@media (max-width: 991.98px) { 
+
+  .post-boxes{
+      .col{
+        max-width: 48%;
+        min-width: 48%;
+      }
+    }
+}
+//phones
+@media (max-width: 767.98px) {
+  .post-boxes{
+    .col{
+      max-width: 100%;
+      min-width: 100%;
+      min-height: unset;
+       .post-box-action{
+       margin-top:1rem;
+          position: relative;
+         display: inline;
+         float: right;
+      }
+    }
+  }
 }

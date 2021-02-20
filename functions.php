@@ -30,6 +30,8 @@ function add_custom_sizes()
     add_theme_support('post-thumbnails');
     add_image_size('full-image', 700);
     add_image_size('card', 400, 300, true);
+    add_image_size('card-medium', 600, 450, true);
+    add_image_size('card-big', 800, 600, true);
 }
 
 add_action('after_setup_theme', 'add_custom_sizes');
@@ -51,7 +53,8 @@ function register_my_menus()
     register_nav_menus(
         array(
             'main-menu' => __('Hauptnavigation'),
-            'social-menu' => __('Social Links')
+            'social-menu' => __('Social Links'),
+            'contact' => __('Kontakt Seite/n'),
         )
     );
 }
@@ -185,7 +188,7 @@ function theme_get_customizer_css()
     $main_color = get_theme_mod('main_color', '');
     if (!empty($main_color)) {
         ?>
-        h1, h2, h3, h4, a #cssmenu ul li.current_page_item > span a, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a, a.link, #footer-blog-post .text-part p {
+        h1, h2, h3, h4, a #cssmenu ul li.current_page_item > span a, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a, a.link:not(.button)not(..wp-block-button__link), #footer-blog-post .text-part p {
             color: <?php echo $main_color; ?> !important;
         }
 
@@ -196,48 +199,29 @@ function theme_get_customizer_css()
         .menu-item-has-children > ul.nav-expand-content::before {
         border-bottom: solid 6px <?php echo $main_color; ?> !important;
         }
-
-        .menu-item-has-children > ul.nav-expand-content {
-        border-top: 5px solid <?php echo $main_color; ?> !important;
-        }
         <?php
     }
     $css = ob_get_clean();
     return $css;
 }
 
+/*add_action('reset_api_init', function(){
+    register_rest_route('baseURL/v1/baseEndPoint', '/endPoint/', array(
+        'methods' => 'GET',
+        'callback' => loadMoreBlog
+    ))
+});*/
 
-/**
- * Shortcodes
- */
-function pageLink_func($atts)
-{
-    $a = shortcode_atts(array(
-        'id' => 0,
-        'title' => 'Hier Seitentitel hinzufügen',
-        'desc' => 'Hier Beschreibung hinnzufügen'
-    ), $atts);
-
-    if (has_post_thumbnail($a['id'])) {
-        $img = get_the_post_thumbnail($a['id'], 'card');
-    } else {
-        $img = '<img src="https://via.placeholder.com/400x300">';
-    }
-    return '<article class="cardW pageLink">
-			<div class="post-thumbnail">
-				<a href="https://webtheke.ch/?p=' . $a['id'] . '">
-					' . $img . '
-					<h4>' . $a['title'] . '</h4>
-					<div class="content">
-						' . $a['desc'] . '
-					</div>
-				</a>
-			</div>
-		</article>';
+function enable_ajax_functionality() {
+  wp_localize_script( 'ajaxify', 'ajaxify_function', array('ajaxurl' => admin_url('admin-ajax.php')) );
 }
+add_action('template_redirect', 'enable_ajax_functionality');
 
-add_shortcode('pageLink', 'pageLink_func');
-
+function loadMoreBlog(){
+    echo json_encode(['test']);
+    wp_die();
+}
+add_action('wp_ajax_nopriv_loadMoreBlog', 'loadMoreBlog');
 
 /**
  * Anpassungen Worpdress
@@ -253,72 +237,6 @@ function q242068_limit_depth($hook)
 
 add_action('admin_enqueue_scripts', 'q242068_limit_depth');
 
-/*
-* === CSS Mobile Menu ====
-*/
-
-class CSS_Menu_Maker_Walker extends Walker
-{
-    var $db_fields = array('parent' => 'menu_item_parent', 'id' => 'db_id');
-
-    function start_lvl(&$output, $depth = 0, $args = array())
-    {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class='nav-expand-content'>\n";
-    }
-
-    function end_lvl(&$output, $depth = 0, $args = array())
-    {
-        $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n";
-    }
-
-    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
-    {
-        global $wp_query;
-        $indent = ($depth) ? str_repeat("\t", $depth) : '';
-        $class_names = $value = '';
-        $classes = empty($item->classes) ? array() : (array)$item->classes;
-
-        /* Add active class */
-        if (in_array('current-menu-item', $classes)) {
-            $classes[] = 'active';
-            unset($classes['current-menu-item']);
-        }
-
-        /* Check for children */
-        $children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
-        if (!empty($children)) {
-            $classes[] = 'has-sub';
-        }
-
-        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
-        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
-        $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
-        $id = $id ? ' id="' . esc_attr($id) . '"' : '';
-
-        $output .= $indent . '<li' . $id . $value . $class_names . '>';
-
-        $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
-        $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
-        $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-        $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-
-        $item_output = $args->before;
-        $item_output .= '<span><a class="nav-link" ' . $attributes . '>';
-        $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-        $item_output .= '</a></span>';
-        $item_output .= $args->after;
-
-        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-    }
-
-    function end_el(&$output, $item, $depth = 0, $args = array())
-    {
-        $output .= "</li>\n";
-    }
-}
 
 add_action('admin_notices', 'my_theme_dependencies');
 
@@ -328,4 +246,6 @@ function my_theme_dependencies()
         echo '<div class="error"><p>' . __('Achtung: Das Theme benötigt Block Lab um zu funkionieren.', 'my-theme') . '</p></div>';
 }
 
+include('functions/custom-shortcodes.php');
+include('functions/menu-walker.php');
 ?>
