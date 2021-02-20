@@ -170,8 +170,6 @@ function sanitize_text($text)
 }
 
 // Modify our styles registration like so
-
-
 function theme_get_customizer_css()
 {
     ob_start();
@@ -180,24 +178,36 @@ function theme_get_customizer_css()
     if (!empty($accent_color)) {
         ?>
         #footer {
-        background: <?php echo $accent_color; ?> !important;
+            background: <?php echo $accent_color; ?> !important;
         }
+
         <?php
     }
 
     $main_color = get_theme_mod('main_color', '');
     if (!empty($main_color)) {
         ?>
-        h1, h2, h3, h4, a #cssmenu ul li.current_page_item > span a, #cssmenu ul li.current-menu-ancestor > span a, #cssmenu ul li.current-menu-item > span a, #cssmenu ul li.current-menu-parent > span a, .nav-link:hover, .text a, a.link:not(.button)not(..wp-block-button__link), #footer-blog-post .text-part p {
+        h1, h2, h3, h4, h2.page-title,
+        #cssmenu ul li.current_page_item > span a,
+        #cssmenu ul li.current-menu-ancestor > span a,
+        #cssmenu ul li.current-menu-item > span a,
+        #cssmenu ul li.current-menu-parent > span a,
+        .nav-link:hover, .text a, a.link:not(.button), a.link:not(.wp-block-button__link),
+        #footer-blog-post .text-part p,
+        .menu-item-has-children > ul.nav-expand-content {
             color: <?php echo $main_color; ?> !important;
         }
 
         .card-box .card-box-action, .button {
-        background: <?php echo $main_color; ?> !important;
+            background: <?php echo $main_color; ?> !important;
         }
 
         .menu-item-has-children > ul.nav-expand-content::before {
-        border-bottom: solid 6px <?php echo $main_color; ?> !important;
+            border-bottom: solid 6px <?php echo $main_color; ?> !important;
+        }
+
+        .menu-item-has-children > ul.nav-expand-content {
+            border-top: 5px solid <?php echo $main_color; ?>;
         }
         <?php
     }

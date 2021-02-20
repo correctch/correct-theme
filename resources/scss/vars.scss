@@ -7,12 +7,15 @@ $text-container-max-width: 800px; //maybe go for 1000
 
 $gap: 30px;
 $small-gap: 15px;
-//maybe move this to another place...
+
+// colors
 $background-blue: #3b4856;
 $yellow: #e49d22;
 $lightgrey: #f0f0f0;
+$menu-gray: #808080;
+$header-color: #fffff;
+
 $mobile-header-height: 80px;
-$header-color: white;
 
 @function calcHeight($amount: 100%) {
   @return 100% - $mobile-header-height;

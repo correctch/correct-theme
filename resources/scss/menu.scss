@@ -118,7 +118,7 @@
 		padding: 10px 0px 10px 15px;
 		float: left;
 		font-size: 1.15rem;
-		color: gray;
+		color: $menu-gray;
 		line-height: 1.4rem;
 		font-weight: 600;
 	}
@@ -128,7 +128,7 @@
 	}
 
 	ul.menu > li.current_page_item a, ul.menu > .current-menu-ancestor a {
-		color: var(--black);
+		color: $menu-gray;
 	}
 
 	ul.menu > li:hover {
