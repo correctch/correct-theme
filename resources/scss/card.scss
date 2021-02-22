@@ -22,8 +22,11 @@
 
 // Team Group of Cards
 .team-group {
-  margin-left: -25%;
-  margin-right: -25%;
+  margin-left: -$container-width-diff/2;
+  margin-right: -$container-width-diff/2;
+  max-width: $container-max-width;
+  width: 100vw;
+  overflow-x: scroll;
 
   > .wp-block-group__inner-container {
     display: flex;
@@ -31,17 +34,24 @@
 
     .card {
       flex-grow: 1;
-      min-width: 33%;
+      min-width: calc(33.33% - #{$gap*2/3});
 
       p, span.card-title {
         color: #ffffff;
       }
 
       @include breakpoint('m') {
-        min-width: 50%;
+        min-width: calc(50% - #{$gap/2});
+      }
+
+      @include breakpoint('s') {
+        min-width: 100%;
       }
     }
+  }
 
-
+  @include breakpoint('s') {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

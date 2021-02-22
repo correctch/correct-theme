@@ -5,11 +5,11 @@ select.form-input, input.form-input, textarea.form-input {
 // für Kontaktformular
 #contact-form {
   position: relative;
-}
 
-#contact-form .button {
-  position: absolute;
-  bottom: $small-gap;
-  right: 0;
-  border: 0;
+  .button {
+    position: absolute;
+    bottom: $small-gap;
+    right: 0;
+    border: 0;
+  }
 }

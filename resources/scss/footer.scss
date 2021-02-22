@@ -3,38 +3,39 @@
   margin: 14rem 0px 0px;
   padding: 7rem 0px 4rem;
   position: relative;
-}
 
-#footer * {
-  color: #fff;
-}
+  * {
+    color: #fff;
+  }
 
-#footer .content {
-  padding-bottom: 0px;
-}
+  .content {
+    padding-bottom: 0px;
+  }
 
-#footer .logo {
-  position: static;
-}
+  .logo {
+    position: static;
+  }
 
-#footer h4 {
-  color: #ffffff !important;
-  margin-top: 0;
-  font-size: 22px;
-  font-weight: normal;
-}
+  h4 {
+    color: #ffffff !important;
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: normal;
+  }
 
-#footer .col p {
-  margin-top: 0px;
-}
+  .col p {
+    margin-top: 0px;
+  }
 
-#footer .link {
-  color: #ffffff !important;
-  text-decoration: underline;
-}
+  .link {
+    color: #ffffff !important;
+    text-decoration: underline;
 
-#footer .link:hover {
-  color: #aaaaaa !important;
+    &:hover {
+      color: #aaaaaa !important;
+    }
+  }
+
 }
 
 #footer-blog-post {
@@ -43,97 +44,98 @@
   top: -200px;
   left: 50%;
   margin-left: - $text-container-max-width/2;
+
+  .row {
+    display: grid; // use grid instead of flex
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $gap;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+
+  p {
+    color: #333; // should be overwritten in functions.php
+    padding: 1rem 0 !important;
+    font-size: 25px;
+  }
+
+  span {
+    color: #333;
+    font-size: 20px;
+  }
+
+  .text-part {
+    padding: $gap $gap $gap 0px;
+    position: relative;
+  }
+
+  .button {
+    position: absolute;
+    right: $gap;
+    bottom: $gap;
+  }
+
+  .date {
+    position: absolute;
+    left: 0;
+    bottom: $gap;
+    padding: 5px 0px;
+  }
+
+  .title {
+    position: absolute;
+    top: $small-gap;
+    left: 0;
+  }
 }
 
-#footer-blog-post .row {
-  display: grid; // use grid instead of flex
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: $gap;
+#social-wrapper-mobile {
+  display: none;
 }
-
-#footer-blog-post img {
-  vertical-align: bottom;
-}
-
-#footer-blog-post p {
-  color: #333; // should be overwritten in functions.php
-  padding: 1rem 0 !important;
-  font-size: 25px;
-}
-
-#footer-blog-post span {
-  color: #333;
-  font-size: 20px;
-}
-
-#footer-blog-post .text-part {
-  padding: $gap $gap $gap 0px;
-  position: relative;
-}
-
-#footer-blog-post .button {
-  position: absolute;
-  right: $gap;
-  bottom: $gap;
-}
-
-#footer-blog-post .date {
-  position: absolute;
-  left: 0;
-  bottom: $gap;
-  padding: 5px 0px;
-}
-
-#footer-blog-post .title {
-  position: absolute;
-  top: $small-gap;
-  left: 0;
-}
-
-
-#social-wrapper-mobile{
-  display:none;
-} 
 
 
 @media all and (max-width: 1249px) {
- 
-  #footer{
+
+  #footer {
     margin-top: 3rem;
     padding-top: 1rem;
     padding-bottom: 0rem;
     text-align: center;
+
     .row {
-      display:inline-block;
-        .col {
-          width: 100%;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-          display:inline-block;
+      display: inline-block;
 
-        }
-    } 
+      .col {
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: inline-block;
 
-  h4{
-    margin-bottom: 0.5rem;
-  }
-
-    #social-wrapper-desktop{
-      display:none;
+      }
     }
-    #social-wrapper-mobile{
-     display:inline-block;
-     width:100%;
-     text-align:center;
-     background:$yellow;
-     padding-bottom: 1rem;
-     padding-top: 1rem;
-    } 
+
+    h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    #social-wrapper-desktop {
+      display: none;
+    }
+
+    #social-wrapper-mobile {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: $yellow;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
 
   }
 
-  #footer-blog-post{
+  #footer-blog-post {
     display: none;
   }
-
 }

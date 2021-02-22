@@ -4,6 +4,7 @@ $right-col: 6;
 
 $container-max-width: 1200px; //maybe go for 1400
 $text-container-max-width: 800px; //maybe go for 1000
+$container-width-diff: $container-max-width - $text-container-max-width;
 
 $gap: 30px;
 $small-gap: 15px;
@@ -24,11 +25,8 @@ $mobile-header-height: 80px;
 $block-height-lg: 400px;
 $block-height-m: 350px;
 $block-height-s: 300px;
-$margin-left: -25%;
-$margin-right: -25%;
 
 $media-direction: max;
-
 $breakpoints: (
   'default': '',
   'xs': 480px,
@@ -39,7 +37,6 @@ $breakpoints: (
 );
 
 /* --------------------------------------------------
-
    Breakpoint Mixin
    -------------------------------------------------- */
 

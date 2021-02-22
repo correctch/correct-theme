@@ -13,7 +13,7 @@ $margin-side: 1em;
   color: white;
   gap: unset;
   justify-content: space-between;
-  margin-bottom:2em;
+  margin-bottom: 2em;
 }
 
 .post-box.col {
@@ -25,24 +25,25 @@ $margin-side: 1em;
   background: $background-blue;
 
 
-  .blog-info{
-    font-size:0.9em;
+  .blog-info {
+    font-size: 0.9em;
     border-bottom: 1px solid white;
     margin-bottom: 0;
     margin-top: 0;
     padding: $space-blog 0;
   }
 
-  .post-box-title, p{
+  .post-box-title, p {
     margin-left: $margin-side;
     margin-right: $margin-side;
   }
 
-  .post-box-title{
+  .post-box-title {
     margin-top: $space-blog;
+
     a {
-      color: white!important;
-      font-size:1.15em
+      color: white !important;
+      font-size: 1.15em
     }
   }
 }
@@ -58,27 +59,27 @@ $margin-side: 1em;
   position: absolute;
   bottom: $margin-side;
   right: $margin-side;
-  padding-left: 1em!important;
-  padding-right: 1em!important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
 }
 
 /* Post */
 #meta {
   display: flex;
-}
 
-#meta .author-img {
-  flex: 0 0 120px;
-}
+  .author-img {
+    flex: 0 0 120px;
 
-#meta .author-meta {
-  flex: 1;
-  flex-basis: auto;
-  vertical-align: bottom;
-}
+    img {
+      border-radius: 100%;
+    }
+  }
 
-.author-img img {
-  border-radius: 100%;
+  .author-meta {
+    flex: 1;
+    flex-basis: auto;
+    vertical-align: bottom;
+  }
 }
 
 #loadMore {
@@ -88,27 +89,28 @@ $margin-side: 1em;
 }
 
 //tablets
-@media (max-width: 991.98px) { 
-
-  .post-boxes{
-      .col{
-        max-width: 48%;
-        min-width: 48%;
-      }
+@media (max-width: 991.98px) {
+  .post-boxes {
+    .col {
+      max-width: 48%;
+      min-width: 48%;
     }
+  }
 }
+
 //phones
 @media (max-width: 767.98px) {
-  .post-boxes{
-    .col{
+  .post-boxes {
+    .col {
       max-width: 100%;
       min-width: 100%;
       min-height: unset;
-       .post-box-action{
-       margin-top:1rem;
-          position: relative;
-         display: inline;
-         float: right;
+
+      .post-box-action {
+        margin-top: 1rem;
+        position: relative;
+        display: inline;
+        float: right;
       }
     }
   }

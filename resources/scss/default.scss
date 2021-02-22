@@ -33,11 +33,11 @@ h1, h2, h3, h4 {
 
 h2 {
   font-size: 35px;
-}
 
-h2.page-title {
-  text-align: center;
-  margin-top: 0px;
+  &.page-title {
+    text-align: center;
+    margin-top: 0px;
+  }
 }
 
 h3 {
@@ -55,6 +55,10 @@ strong {
   max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 $small-gap;
+
+  @include breakpoint('s') {
+    margin: 0; // full width
+  }
 }
 
 .text-container {
@@ -66,9 +70,13 @@ strong {
 #page-content {
   margin-top: -13rem;
   background: $lightgrey;
-  padding: $gap;
+  padding: $gap; // damit zwischen bild und text noch weisser rand ist
   z-index: 2;
   position: relative;
+
+  @include breakpoint('s') {
+    padding: 0; // full width
+  }
 }
 
 .img-section img {
@@ -111,11 +119,11 @@ img {
 a {
   color: var(--blue);
   text-decoration: none;
-}
 
-a:hover {
-  color: var(--darker-blue);
-  text-decoration: underline;
+  &:hover {
+    color: var(--darker-blue);
+    text-decoration: underline;
+  }
 }
 
 /* Page Abstract */
@@ -135,16 +143,16 @@ a:hover {
 
 .social-icon {
   margin-right: 1rem;
-}
 
-.social-icon:hover {
-  text-decoration: none;
-  filter: brightness(50%);
-}
+  &:hover {
+    text-decoration: none;
+    filter: brightness(50%);
+  }
 
-.social-icon img {
-  width: auto;
-  height: 40px;
+  img {
+    width: auto;
+    height: 40px;
+  }
 }
 
 /* override wp styles */
@@ -162,7 +170,6 @@ a:hover {
 
 /* responsive */
 @media only screen and (max-width: 1400px) {
-
   .content {
     margin-right: 15px;
   }
@@ -175,11 +182,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 900px) {
-  .container {
-    //TODOmax-width: 600px;
-    margin: 0px auto;
-  }
-
   .img-section {
     flex: 0;
   }
@@ -194,10 +196,6 @@ a:hover {
   * {
     font-size: 16px;
   }
-
-  .container {
-    margin: 0px 15px;
-  }
 }
 
 /*
@@ -206,7 +204,6 @@ a:hover {
 */
 
 .page-img-compact{
-  
   #page-content{
     margin-top:3em;
     background: unset;

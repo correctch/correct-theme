@@ -3,7 +3,7 @@
 	&.row{
 			flex-wrap: wrap;
 		}
-	margin: 0 $margin-right 2rem $margin-left;
+	margin: 0 -#{$container-width-diff/2} 2rem;
 	justify-content:center;
 }
 .offerings-header{
