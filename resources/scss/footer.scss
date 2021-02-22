@@ -45,6 +45,12 @@
   margin-left: - $text-container-max-width/2;
 }
 
+#footer-blog-post .row {
+  display: grid; // use grid instead of flex
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: $gap;
+}
+
 #footer-blog-post img {
   vertical-align: bottom;
 }

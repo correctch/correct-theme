@@ -1,9 +1,10 @@
 .button, .menu-kontakt-container a, .wp-block-button__link {
   background: #e49d22;
-  color: #fff!important;
+  color: #fff !important;
   padding: 5px 20px;
   transition: all 0.5s ease-out;
   border-radius: 7px;
+  font-size: 1rem;
 }
 
 .button:hover, .menu-kontakt-container:hover a, .wp-block-button__link:hover {

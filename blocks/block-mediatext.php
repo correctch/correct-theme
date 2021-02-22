@@ -25,7 +25,7 @@ if ($type === 'vid') {
         <?php echo $media ?>
     </div>
     <div class="text">
-        <span class="title"><?php block_field('titel'); ?></span>
+        <h3 class="title"><?php block_field('titel'); ?></h3>
         <span class="paragraph"><?php block_field('text'); ?></span>
         <a href="<?php block_field('button_url') ?? '' ?>"
            class="button"><?php block_field('button_text') ?? 'mehr erfahren' ?></a>
