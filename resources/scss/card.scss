@@ -1,0 +1,47 @@
+.card {
+  p, span.card-title {
+    padding-left: $small-gap;
+    padding-right: $small-gap;
+    padding-bottom: $small-gap;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        color: #aaa;
+      }
+    }
+  }
+
+  span.card-title {
+    padding-top: $small-gap;
+    font-size: 25px;
+    display: block;
+  }
+}
+
+// Team Group of Cards
+.team-group {
+  margin-left: -25%;
+  margin-right: -25%;
+
+  > .wp-block-group__inner-container {
+    display: flex;
+    gap: $gap;
+
+    .card {
+      flex-grow: 1;
+      min-width: 33%;
+
+      p, span.card-title {
+        color: #ffffff;
+      }
+
+      @include breakpoint('m') {
+        min-width: 50%;
+      }
+    }
+
+
+  }
+}

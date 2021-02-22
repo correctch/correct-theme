@@ -177,7 +177,7 @@ function theme_get_customizer_css()
     $accent_color = get_theme_mod('accent_color', '');
     if (!empty($accent_color)) {
         ?>
-        #footer {
+        #footer, .team-group .card {
             background: <?php echo $accent_color; ?> !important;
         }
 
