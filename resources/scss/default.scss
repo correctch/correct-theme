@@ -13,6 +13,10 @@
 * {
   box-sizing: border-box;
   font-size: 18px;
+
+  @include breakpoint('xl') {
+    font-size: 16px;
+  }
 }
 
 html, body {
@@ -54,9 +58,8 @@ strong {
 .container {
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: 0 $small-gap;
 
-  @include breakpoint('s') {
+  @include breakpoint('sm') {
     margin: 0; // full width
   }
 }
@@ -67,6 +70,27 @@ strong {
   margin: 0 auto;
 }
 
+#header {
+  position: fixed;
+  width: 100vw;
+  top: 0px;
+  background: $header-color;
+  z-index: 4;
+  height: $mobile-header-height;
+  margin: 0px;
+  padding: 0px $gap;
+  border-bottom: 1px solid #aaa;
+  background: #ffffff;
+
+  .container .row {
+    min-height: none;
+  }
+
+  @include breakpoint('sm') {
+    padding: 0 $small-gap; // full width
+  }
+}
+
 #page-content {
   margin-top: -13rem;
   background: $lightgrey;
@@ -74,8 +98,8 @@ strong {
   z-index: 2;
   position: relative;
 
-  @include breakpoint('s') {
-    padding: 0; // full width
+  @include breakpoint('sm') {
+    padding: 0 $small-gap; // full width
   }
 }
 

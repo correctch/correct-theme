@@ -2,12 +2,13 @@
 $left-col: 5;
 $right-col: 6;
 
+$gap: 30px;
+$small-gap: $gap/2;
+
 $container-max-width: 1200px; //maybe go for 1400
 $text-container-max-width: 800px; //maybe go for 1000
 $container-width-diff: $container-max-width - $text-container-max-width;
-
-$gap: 30px;
-$small-gap: 15px;
+$margin-diff: -($container-width-diff)/2 - $gap;
 
 // colors
 $background-blue: #3b4856;
@@ -27,13 +28,15 @@ $block-height-m: 350px;
 $block-height-s: 300px;
 
 $media-direction: max;
+
+// breakpoints von bootstrap
 $breakpoints: (
   'default': '',
   'xs': 480px,
-  's': 667px,
-  'm': 1024px,
-  'l': 1280px,
-  'xl': 1680px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
 );
 
 /* --------------------------------------------------

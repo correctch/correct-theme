@@ -5,10 +5,10 @@
     top: 0;
     z-index: 9999;
     background: white;
-  }
 
-  #header > .container {
-    position: relative;
+    > .container {
+      position: relative;
+    }
   }
 
   .mobile-menu {
@@ -210,24 +210,6 @@
 
   .nav-wrapper, #mainmenu, #contact-menu, .search-form-outer, .search-form-outer, #contact-menu-mobile, #main-menu-mobile {
     display: none;
-  }
-
-  #header {
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    background: $header-color;
-    z-index: 4;
-    height: $mobile-header-height;
-    margin: 0px;
-    padding: 0px;
-    border-bottom: 1px solid #aaa;
-    background: #ffffff;
-
-    .container .row {
-      min-height: none;
-    }
-
   }
 
   .custom-logo {
@@ -514,57 +496,57 @@
 
 
   /*	Menu Button 	*/
-  button.menu-togle {
+  button.menu-toggle {
     display: block;
     opacity: 1;
     background-color: transparent;
     position: absolute;
     z-index: 2;
-    top: 13px;
-    right: 15px;
+    top: ($mobile-header-height - 30px)/2;
+    right: $gap;
     border: none;
     width: 36px;
     height: 30px;
     outline: none;
     transition: opacity 0.2s ease-out;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      right: auto;
+      width: 80%;
+      background: linear-gradient(to bottom, #333333, #333333 16%, transparent 16%, transparent 41%, #333333 41%, #333333 58%, transparent 58%, transparent 84%, #333333 84%, #333333 100%);
+      transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
+    }
+
+    &:after {
+      opacity: 0;
+      content: '×';
+      color: $yellow;
+      position: absolute;
+      left: -4px;
+      font-family: Arial, sans-serif;
+      font-size: 76px;
+      line-height: 0;
+      transition: opacity 0.4s ease-out;
+    }
   }
 
-  button.menu-togle:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    right: auto;
-    width: 80%;
-    background: linear-gradient(to bottom, #333333, #333333 16%, transparent 16%, transparent 41%, #333333 41%, #333333 58%, transparent 58%, transparent 84%, #333333 84%, #333333 100%);
-    transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
-  }
-
-  button.menu-togle:after {
-    opacity: 0;
-    content: '×';
-    color: $yellow;
-    position: absolute;
-    left: -4px;
-    font-family: Arial, sans-serif;
-    font-size: 76px;
-    line-height: 0;
-    transition: opacity 0.4s ease-out;
-  }
-
-  button.menu-togle:hover, .open button.menu-togle {
+  button.menu-toggle:hover, .open button.menu-toggle {
     opacity: 1;
   }
 
-  .nav-is-toggled button.menu-togle:before {
+  .nav-is-toggled button.menu-toggle:before {
     opacity: 0;
     width: 0;
   }
 
-  .nav-is-toggled button.menu-togle:after {
+  .nav-is-toggled button.menu-toggle:after {
     opacity: 1;
     transform: translate3d(0, 0, 0) rotate(180deg);
     transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;

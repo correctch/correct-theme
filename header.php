@@ -30,9 +30,9 @@
 				} ?>
 			</div>
 				<?php require('includes/nav.php'); ?>
-			<button class="menu-togle"></button>
+			<button class="menu-toggle"></button>
 			<script>
-				$('button.menu-togle').on('click', function(){
+				$('button.menu-toggle').on('click', function(){
 					$('body').toggleClass('nav-is-toggled');
 				});
 			</script>

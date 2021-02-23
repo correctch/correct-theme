@@ -4,6 +4,56 @@
   padding: 7rem 0px 4rem;
   position: relative;
 
+  @include breakpoint('lg') {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    text-align: center;
+
+    .row {
+      width: 100%;
+      max-width: $text-container-max-width;
+      margin: 0 auto;
+
+      @include breakpoint('md') {
+        margin: 0;
+        padding: 0 $small-gap;
+      }
+
+      @include breakpoint('sm') {
+        display: inline-block;
+      }
+
+      .col {
+        flex: 1;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+
+        @include breakpoint('sm') {
+          width: 100%;
+        }
+      }
+    }
+
+    h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    #social-wrapper-desktop {
+      display: none;
+    }
+
+    #social-wrapper-mobile {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: $yellow;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+  }
+
   * {
     color: #fff;
   }
@@ -14,6 +64,14 @@
 
   .logo {
     position: static;
+
+    @include breakpoint('lg') {
+      max-width: 250px;
+
+      @include breakpoint('md') {
+        max-width: 170px;
+      }
+    }
   }
 
   h4 {
@@ -44,6 +102,10 @@
   top: -200px;
   left: 50%;
   margin-left: - $text-container-max-width/2;
+
+  @include breakpoint('lg') {
+    display: none;
+  }
 
   .row {
     display: grid; // use grid instead of flex
@@ -93,49 +155,4 @@
 
 #social-wrapper-mobile {
   display: none;
-}
-
-
-@media all and (max-width: 1249px) {
-
-  #footer {
-    margin-top: 3rem;
-    padding-top: 1rem;
-    padding-bottom: 0rem;
-    text-align: center;
-
-    .row {
-      display: inline-block;
-
-      .col {
-        width: 100%;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        display: inline-block;
-
-      }
-    }
-
-    h4 {
-      margin-bottom: 0.5rem;
-    }
-
-    #social-wrapper-desktop {
-      display: none;
-    }
-
-    #social-wrapper-mobile {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      background: $yellow;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-    }
-
-  }
-
-  #footer-blog-post {
-    display: none;
-  }
 }

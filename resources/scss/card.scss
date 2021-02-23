@@ -22,8 +22,7 @@
 
 // Team Group of Cards
 .team-group {
-  margin-left: -$container-width-diff/2;
-  margin-right: -$container-width-diff/2;
+  margin-left: $margin-diff;
   max-width: $container-max-width;
   width: 100vw;
   overflow-x: scroll;
@@ -40,18 +39,23 @@
         color: #ffffff;
       }
 
-      @include breakpoint('m') {
+      @include breakpoint('lg') {
         min-width: calc(50% - #{$gap/2});
       }
 
-      @include breakpoint('s') {
+      @include breakpoint('sm') {
         min-width: 100%;
       }
     }
   }
 
-  @include breakpoint('s') {
-    margin-left: 0;
-    margin-right: 0;
+  @include breakpoint('lg') {
+    margin-left: -$gap;
+    max-width: $text-container-max-width;
+  }
+
+  @include breakpoint('md') {
+    margin-left: 0px;
+    width: 100%;
   }
 }
