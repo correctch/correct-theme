@@ -15,13 +15,13 @@
       max-width: $text-container-max-width;
       margin: 0 auto;
 
-      @include breakpoint('md') {
+      @include breakpoint('lg') {
         margin: 0;
         padding: 0 $small-gap;
-      }
 
-      @include breakpoint('sm') {
-        display: inline-block;
+        @include breakpoint('sm') {
+          display: inline-block;
+        }
       }
 
       .col {

@@ -29,6 +29,24 @@ $margin-side: 1em;
   position: relative;
   background: $background-blue;
 
+  @include breakpoint('xl') {
+    max-width: 48%;
+    min-width: 48%;
+    min-height: 660px;
+  }
+
+  @include breakpoint('md') {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: unset;
+
+    .post-box-action {
+      margin-top: 1rem;
+      position: relative;
+      display: inline;
+      float: right;
+    }
+  }
 
   .blog-info {
     font-size: 0.9em;
@@ -88,35 +106,7 @@ $margin-side: 1em;
 }
 
 #loadMore {
-  display: block;
+  display: none; // todo fix das
   margin: 0 auto;
   padding: 8px 20px
-}
-
-//tablets
-@media (max-width: 991.98px) {
-  .post-boxes {
-    .col {
-      max-width: 48%;
-      min-width: 48%;
-    }
-  }
-}
-
-//phones
-@media (max-width: 767.98px) {
-  .post-boxes {
-    .col {
-      max-width: 100%;
-      min-width: 100%;
-      min-height: unset;
-
-      .post-box-action {
-        margin-top: 1rem;
-        position: relative;
-        display: inline;
-        float: right;
-      }
-    }
-  }
 }
