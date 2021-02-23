@@ -14,20 +14,21 @@ if ($type === 'vid') {
         frameborder="0" 
         allowfullscreen></iframe>';*/
 }elseif($type === 'img'){
-    $media = '<img src="'.block_field("media_img").'">';
+    $media = wp_get_attachment_image( block_value("media_img"), 'large' );
 }
-
 
 ?>
 
-<div class="media-text-wrapper">
-    <div class="media">
-        <?php echo $media ?>
-    </div>
-    <div class="text">
-        <h3 class="title"><?php block_field('titel'); ?></h3>
-        <span class="paragraph"><?php block_field('text'); ?></span>
-        <a href="<?php block_field('button_url') ?? '' ?>"
-           class="button"><?php block_field('button_text') ?? 'mehr erfahren' ?></a>
+<div class="media-text-wrapper-container">
+    <div class="media-text-wrapper">
+        <div class="media">
+            <?php echo $media ?>
+        </div>
+        <div class="text">
+            <h3 class="title"><?php block_field('titel'); ?></h3>
+            <span class="paragraph"><?php block_field('text'); ?></span>
+            <a href="<?php block_field('button_url') ?? '' ?>"
+               class="button"><?php block_field('button_text') ?? 'mehr erfahren' ?></a>
+        </div>
     </div>
 </div>

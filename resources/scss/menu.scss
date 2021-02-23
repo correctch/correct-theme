@@ -21,7 +21,7 @@
     display: inline-block
   }
 
-  button.menu-togle {
+  button.menu-toggle {
     display: none;
   }
 
@@ -50,12 +50,19 @@
     margin-right: 15px;
     float: right;
     padding: 10px 15px 10px 15px;
-    border: 1px solid lightgray;
     border-radius: 12px;
     -webkit-transition: all 0.6s 0s ease;
     -moz-transition: all 0.6s 0s ease;
     -o-transition: all 0.6s 0s ease;
     transition: all 0.6s 0s ease;
+
+    &.active {
+      border: 1px solid lightgray;
+
+      .search-form-wrapper {
+        display: inline-block;
+      }
+    }
 
     input {
       border: none;
@@ -83,10 +90,6 @@
   .search-form-wrapper {
     display: none;
     width: auto;
-
-    &.active {
-      display: inline-block;
-    }
 
     -webkit-transition: all 0.6s 0s ease;
     -moz-transition: all 0.6s 0s ease;
@@ -509,6 +512,10 @@
     height: 30px;
     outline: none;
     transition: opacity 0.2s ease-out;
+
+    @include breakpoint('sm') {
+      right: $small-gap;
+    }
 
     &:before {
       content: "";

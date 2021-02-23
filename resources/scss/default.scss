@@ -39,8 +39,8 @@ h2 {
   font-size: 35px;
 
   &.page-title {
+    padding-top: $gap;
     text-align: center;
-    margin-top: 0px;
   }
 }
 
@@ -71,30 +71,44 @@ strong {
 }
 
 #header {
-  position: fixed;
-  width: 100vw;
-  top: 0px;
-  background: $header-color;
-  z-index: 4;
-  height: $mobile-header-height;
-  margin: 0px;
-  padding: 0px $gap;
-  border-bottom: 1px solid #aaa;
-  background: #ffffff;
+  @include breakpoint('lg','min') {
+    padding: 2.5rem 0 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: white;
+
+    > .container {
+      position: relative;
+    }
+  }
+
+  @include breakpoint('lg') {
+    width: 100vw;
+    top: 0px;
+    background: $header-color;
+    z-index: 4;
+    padding: 0px $gap;
+    border-bottom: 1px solid #aaa;
+    background: #ffffff;
+
+    position: fixed;
+    height: $mobile-header-height;
+
+    @include breakpoint('sm') {
+      padding: 0 $small-gap; // full width
+    }
+  }
 
   .container .row {
     min-height: none;
-  }
-
-  @include breakpoint('sm') {
-    padding: 0 $small-gap; // full width
   }
 }
 
 #page-content {
   margin-top: -13rem;
   background: $lightgrey;
-  padding: $gap; // damit zwischen bild und text noch weisser rand ist
+  padding: 0 $gap $gap; // damit zwischen bild und text noch weisser rand ist
   z-index: 2;
   position: relative;
 
@@ -227,9 +241,9 @@ a {
 * For pages that want text starting below banner
 */
 
-.page-img-compact{
-  #page-content{
-    margin-top:3em;
+.page-img-compact {
+  #page-content {
+    margin-top: 3em;
     background: unset;
   }
 }

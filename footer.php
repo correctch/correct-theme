@@ -37,16 +37,19 @@
     $(".accordion > .accordion-content").hide();
     $(".accordion").removeClass("open");
 
-    $(function(){
-      $('.search-form-icon').click(function(){
-          if (!$('.search-form-wrapper').hasClass('active')) {
-            $('.search-form-wrapper').addClass('active');
-            $(this).html('<i class="fas fa-times"></i>');
-          }else{
-            $('.search-form-wrapper').removeClass('active');
-            $(this).html('<i class="fas fa-search"></i>');
-          }
-      });  
+    $(function () {
+        let search_form_outer = $('.search-form-outer');
+
+        $('.search-form-icon').click(function () {
+            if (!search_form_outer.hasClass('active')) {
+                search_form_outer.addClass('active');
+                $(this).html('<i class="fas fa-times"></i>');
+                $('#s').focus();
+            } else {
+                search_form_outer.removeClass('active');
+                $(this).html('<i class="fas fa-search"></i>');
+            }
+        });
     });
 
 

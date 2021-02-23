@@ -65,6 +65,14 @@
       padding-left: 0;
       padding-right: calc(1 * var(--grid-gap));
     }
+    
+    p a {
+      text-decoration: underline;
+
+      &:hover {
+        color: #aaa;
+      }
+    }
   }
 
   .wp-block-media-text__media, .media {
@@ -93,6 +101,12 @@
     right: $small-gap;
     bottom: $small-gap;
   }
+}
+
+.media-text-wrapper-container {
+  display: block;
+  margin-top: $gap*2;
+  margin-bottom: $gap*2;
 }
 
 @media screen and (max-width: 1250px) {
