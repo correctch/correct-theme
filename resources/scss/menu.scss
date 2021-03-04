@@ -32,11 +32,14 @@
   /**
   * Search Form
   */
+  #header .search-form-outer {
+    float: right;
+  }
+
   .search-form-outer {
     position: relative;
     display: inline-block;
     margin-right: 15px;
-    float: right;
     padding: 10px 15px 10px 15px;
     border-radius: 12px;
     -webkit-transition: all 0.6s 0s ease;
@@ -73,6 +76,10 @@
     -moz-transition: all 0.6s 0s ease;
     -o-transition: all 0.6s 0s ease;
     transition: all 0.6s 0s ease;
+
+    button {
+      border: 0px;
+    }
   }
 
   .search-form-wrapper {

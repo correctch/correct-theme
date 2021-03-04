@@ -20,6 +20,8 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
 	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 	crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/script.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/defer.js" defer></script>
 </head>
 <body>
 	<div id="header">
@@ -31,11 +33,6 @@
 			</div>
 				<?php require('includes/nav.php'); ?>
 			<button class="menu-toggle"></button>
-			<script>
-				$('button.menu-toggle').on('click', function(){
-					$('body').toggleClass('nav-is-toggled');
-				});
-			</script>
 		</div>
 		<?php require('includes/mobile-nav.php'); ?>
 	</div>
