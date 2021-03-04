@@ -1,8 +1,13 @@
 /* Footer */
 #footer {
-  margin: 14rem 0px 0px;
-  padding: 7rem 0px 4rem;
   position: relative;
+  margin: 4rem 0px 0px;
+  padding: 4rem 0px 4rem;
+
+  &.with-post {
+    margin: 14rem 0px 0px;
+    padding: 7rem 0px 4rem;
+  }
 
   @include breakpoint('lg') {
     margin-top: 3rem;

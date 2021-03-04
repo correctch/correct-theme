@@ -55,6 +55,11 @@
       }
     }
 
+    &.center {
+      left: 50%;
+      margin-left: -125px;
+    }
+
     input {
       border: none;
       background: unset;

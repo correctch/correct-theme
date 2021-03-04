@@ -1,10 +1,19 @@
-<div id="footer">
-    <?php require('includes/footer-post.php'); ?>
+<?php
+    $show_post = !isset($args['show_post']) || $args['show_post'];
+?>
+
+<div id="footer" class="<?php if($show_post) { echo('with-post'); } ?>">
+    <?php
+    if ($show_post) {
+        require('includes/footer-post.php');
+    }
+    ?>
     <div class="container">
         <div class="row">
             <div class="col">
                 <a href="https://correct.ch">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-correct-white-<?php echo substr(get_theme_mod('accent_color', ''),1); ?>.png" alt="" class="logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-correct-white-<?php echo substr(get_theme_mod('accent_color', ''), 1); ?>.png"
+                         alt="" class="logo">
                 </a>
             </div>
             <div id="social-wrapper-desktop" class="col">
@@ -23,9 +32,9 @@
             </div>
         </div>
     </div>
-     <div id="social-wrapper-mobile">
-                <?php require('includes/social-links.php'); ?>
-            </div>
+    <div id="social-wrapper-mobile">
+        <?php require('includes/social-links.php'); ?>
+    </div>
 </div>
 <?php wp_footer(); ?>
 </body>
