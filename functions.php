@@ -177,7 +177,7 @@ function theme_get_customizer_css()
     $accent_color = get_theme_mod('accent_color', '');
     if (!empty($accent_color)) {
         ?>
-        #footer, .team-group .card {
+        #footer, .team-group .card, .pagination .nav-links .page-numbers.current {
             background: <?php echo $accent_color; ?> !important;
         }
 
@@ -198,7 +198,7 @@ function theme_get_customizer_css()
             color: <?php echo $main_color; ?> !important;
         }
 
-        .card-box .card-box-action, .button {
+        .card-box .card-box-action, .button, .pagination .nav-links .page-numbers {
             background: <?php echo $main_color; ?> !important;
         }
 

@@ -79,7 +79,7 @@ strong {
 }
 
 #header {
-  width: 100vw;
+  width: 100%;
 
   @include breakpoint('lg','min') {
     padding: 2.5rem 0 2.5rem;
@@ -154,6 +154,7 @@ strong {
 .row {
   display: flex;
   gap: $gap;
+  justify-content: flex-start;
 }
 
 .col {

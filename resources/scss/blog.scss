@@ -23,15 +23,15 @@ $margin-side: 1em;
 
 .post-box.col {
   flex: 1;
-  max-width: 30%;
-  min-width: 30%;
+  max-width: calc(33.33% - #{$gap/3*2});
+  min-width: calc(33.33% - #{$gap/3*2});
   min-height: 690px;
   position: relative;
   background: $background-blue;
 
   @include breakpoint('xl') {
-    max-width: 48%;
-    min-width: 48%;
+    max-width: calc(50% - #{$gap/2});
+    min-width: calc(50% - #{$gap/2});
     min-height: 660px;
   }
 
@@ -105,8 +105,29 @@ $margin-side: 1em;
   }
 }
 
-#loadMore {
-  display: none; // todo fix das
-  margin: 0 auto;
-  padding: 8px 20px
+.pagination {
+  text-align: center;
+
+  .screen-reader-text {
+    font-size: 1rem;
+  }
+
+  .nav-links .page-numbers {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    background: $yellow;
+
+    &.current {
+      background: $background-blue;
+      color: #ffffff;
+    }
+
+    &:not(.current):hover {
+      filter: brightness(70%);
+    }
+  }
 }
