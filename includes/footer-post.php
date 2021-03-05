@@ -26,7 +26,7 @@ if ( $the_query->have_posts() ) :
                             Blog
                         <?php } ?>
                     </span>
-                    <p><?php the_title(); ?></p>
+                    <p class="main-color"><?php the_title(); ?></p>
                     <span class="date"><?php the_date('d.m.Y'); ?></span>
                     <a class="button" href="<?php the_permalink(); ?>">Beitrag lesen</a>
                 </div>

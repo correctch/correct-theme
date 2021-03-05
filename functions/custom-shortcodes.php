@@ -49,7 +49,7 @@ function angebot_listing_function($atts) {
 		return '<p>Fehler in der ID</p>';
 	}
 
-	$html = '<div class="offer-wrapper"><div class="offerings-header row"><h2>'.$a['header'].'</h2></div>';
+	$html = '<div class="offer-wrapper"><div class="offerings-header"><h2>'.$a['header'].'</h2></div>';
 	$html .= '<div class="offerings row">';
     shuffle($sub_pages);
     $last_key = 0;

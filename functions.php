@@ -193,13 +193,18 @@ function theme_get_customizer_css()
         #cssmenu ul li.current-menu-item > span a,
         #cssmenu ul li.current-menu-parent > span a,
         .nav-link:hover, .text > a:not(.button), a.link:not(.button), a.link:not(.wp-block-button__link),
-        #footer-blog-post .text-part p,
-        .menu-item-has-children > ul.nav-expand-content {
+        .menu-item-has-children > ul.nav-expand-content,
+        .main-color, .main-color-on-hover:hover {
             color: <?php echo $main_color; ?> !important;
         }
 
-        .card-box .card-box-action, .button, .pagination .nav-links .page-numbers {
+        .card-box .card-box-action, .button, .pagination .nav-links .page-numbers,
+        .main-background {
             background: <?php echo $main_color; ?> !important;
+        }
+
+        .border-main-color {
+            border-color: <?php echo $main_color; ?> !important;
         }
 
         .menu-item-has-children > ul.nav-expand-content::before {

@@ -8,9 +8,6 @@ $(".accordion-header").click(function () {
     $(this).parent().toggleClass("open");
 });
 
-$(".accordion > .accordion-content").hide();
-$(".accordion").removeClass("open");
-
 /**
  * Search Form
  */
