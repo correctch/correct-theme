@@ -5,14 +5,16 @@ $media = '<img src="https://via.placeholder.com/400x300">';
 
 if ($type === 'vid') {
     $url = block_value("media_vid");
-    $string = '';
-    $media = do_shortcode('[embedyt]'.$url.'[/embedyt]');
 
-    /*$media = '<iframe width="630"
-        height="354"
-        src="https://www.youtube.com/embed/YuOBzWF0Aws"
-        frameborder="0" 
-        allowfullscreen></iframe>';*/
+    if(strpos($url, 'youtube')) {
+        $video_id = str_replace('https://www.youtube.com/watch?v=','', $url);
+        $embed_url = 'https://www.youtube.com/embed/'.$video_id;
+        $media = '<iframe width="560" height="315" src="'.$embed_url.'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    } else if (strpos($url, 'vimeo')) {
+        $video_id = str_replace('https://vimeo.com/','', $url);
+        $embed_url = 'https://player.vimeo.com/video/'.$video_id;
+        $media='<iframe title="vimeo-player" src="'.$embed_url.'" width="640" height="360" frameborder="0" allowfullscreen></iframe>';
+    }
 }elseif($type === 'img'){
     $media = wp_get_attachment_image( block_value("media_img"), 'large' );
 }
