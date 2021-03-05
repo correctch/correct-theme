@@ -199,6 +199,7 @@ function theme_get_customizer_css()
         }
 
         .card-box .card-box-action, .button, .pagination .nav-links .page-numbers,
+        .menu-kontakt-container a,
         .main-background {
             background: <?php echo $main_color; ?> !important;
         }
