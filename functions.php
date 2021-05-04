@@ -192,7 +192,7 @@ function theme_get_customizer_css()
         #cssmenu ul li.current-menu-ancestor > span a,
         #cssmenu ul li.current-menu-item > span a,
         #cssmenu ul li.current-menu-parent > span a,
-        .nav-link:hover, .text > a:not(.button), a.link:not(.button), a.link:not(.wp-block-button__link),
+        #page-content .text a, .nav-link:hover, .text > a:not(.button), a.link:not(.button), a.link:not(.wp-block-button__link),
         .menu-item-has-children > ul.nav-expand-content,
         .main-color, .main-color-on-hover:hover {
             color: <?php echo $main_color; ?> !important;
