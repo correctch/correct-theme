@@ -12,13 +12,13 @@
       &:hover {
         color: #aaa;
       }
-
-      .card-link {
-        position: absolute;
-        bottom: .5rem;
-        right: .5rem;
-      }
     }
+  }
+
+  a.card-link {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
   }
 
   span.card-title {
