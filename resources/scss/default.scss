@@ -273,7 +273,11 @@ a {
   margin-left: 0px;
   margin-right: 0px;
 
-  td {
-    border-bottom: 1px solid black;
+  table {
+    border-collapse: collapse;
+
+    td {
+      border-bottom: 1px solid black;
+    }
   }
 }

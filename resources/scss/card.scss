@@ -22,7 +22,7 @@
   }
 
   div.card-content {
-    height: 140px;
+    min-height: 140px;
     position: relative;
   }
 
@@ -39,6 +39,7 @@
   max-width: $container-max-width;
   width: 100vw;
   overflow-x: scroll;
+
   @include breakpoint('sm'){
      margin-bottom: 2em;
   }
