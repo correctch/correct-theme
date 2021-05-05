@@ -124,8 +124,11 @@ strong {
 
   @include breakpoint('sm') {
     padding: 0 $small-gap; // full width
+    margin-top: -2rem;
   }
 }
+
+
 
 .img-section {
   min-height: 250px;
