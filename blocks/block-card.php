@@ -1,7 +1,6 @@
 <div class="card card-rows-<?php block_field('rows'); ?>">
     <?php
         $attachment_id = block_value( 'bild' );
-        echo($attachment_id);
         $url = wp_get_attachment_image_src( $attachment_id, $size = 'card')[0];
     ?>
     <img src="<?php echo $url; ?>" alt="" class="card-hover-img">
