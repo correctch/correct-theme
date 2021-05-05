@@ -41,7 +41,7 @@
     display: inline-block;
     margin-right: 15px;
     padding: 10px 15px 10px 15px;
-    border-radius: 12px;
+    border-radius: 4px;
     -webkit-transition: all 0.6s 0s ease;
     -moz-transition: all 0.6s 0s ease;
     -o-transition: all 0.6s 0s ease;
@@ -49,6 +49,11 @@
 
     &.active {
       border: 1px solid lightgray;
+      background: white;
+	  position: absolute;
+	  width: 21%;
+	  right: 0;
+	  margin-right: 0;
 
       .search-form-wrapper {
         display: inline-block;
