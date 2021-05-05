@@ -1,14 +1,16 @@
 <?php get_header(); ?>
     <div class="container">
-        <div class="img-section">
-            <?php if (has_post_thumbnail()) {
-                if (wp_is_mobile()) {
-                    the_post_thumbnail('banner-image', ['class' => 'main-img']);
-                } else {
-                    the_post_thumbnail('side-image', ['class' => 'main-img']);
-                }
-            } ?>
-        </div>
+        <?php if (has_post_thumbnail()) { ?>
+            <div class="img-section">
+                <?php if (has_post_thumbnail()) {
+                    if (wp_is_mobile()) {
+                        the_post_thumbnail('banner-image', ['class' => 'main-img']);
+                    } else {
+                        the_post_thumbnail('side-image', ['class' => 'main-img']);
+                    }
+                } ?>
+            </div>
+        <?php } ?>
         <div class="text-container" id="page-content">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php
