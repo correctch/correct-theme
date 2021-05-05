@@ -1,5 +1,8 @@
 <div class="card card-rows-<?php block_field('rows'); ?>">
-    <img src="<?php block_field('bild'); ?>" alt="" class="card-hover-img">
+    <?php
+        $attachment_id = block_value( 'bild' );
+    ?>
+    <img src="<?php wp_get_attachment_image( $attachment_id, 'card' ); ?>" alt="" class="card-hover-img">
     <div class="card-content">
         <span class="card-title"><?php block_field('titel'); ?></span>
         <?php if(block_value('text') !== "") { ?>
