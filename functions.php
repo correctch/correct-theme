@@ -146,6 +146,7 @@ function sanitize_text($text)
         'a' => array(
             'href' => array(),
             'class' => array(),
+            'target' => array()
         ),
         'br' => array(),
         'p' => array(
