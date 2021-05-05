@@ -21,6 +21,11 @@
     right: .5rem;
   }
 
+  div.card-content {
+    height: 140px;
+    position: relative;
+  }
+
   span.card-title {
     padding-top: $small-gap;
     font-size: 25px;
