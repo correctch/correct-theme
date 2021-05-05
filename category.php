@@ -32,4 +32,4 @@
         ]); ?>
     </div>
     </div><!-- main -->
-<?php get_footer(['show_post' => false]); ?>
+<?php get_footer(null, ['show_post' => false]); ?>
