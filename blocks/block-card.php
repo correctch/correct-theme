@@ -2,7 +2,7 @@
     <?php
         $attachment_id = block_field( 'bild' );
     ?>
-    <?php wp_get_attachment_image( $attachment_id, 'card', false, ['class' => 'card-hover-img'] ); ?>
+    <img src="<?php wp_get_attachment_image( $attachment_id, 'card', false, ['class' => 'card-hover-img'] ); ?>" alt="" class="card-hover-img">
     <div class="card-content">
         <span class="card-title"><?php block_field('titel'); ?></span>
         <?php if(block_value('text') !== "") { ?>
