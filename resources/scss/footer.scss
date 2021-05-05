@@ -7,6 +7,10 @@
   &.with-post {
     margin: 14rem 0px 0px;
     padding: 7rem 0px 4rem;
+  
+    @include breakpoint('sm') {
+        margin: 0;
+    }
   }
 
   @include breakpoint('lg') {
