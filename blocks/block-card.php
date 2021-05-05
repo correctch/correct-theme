@@ -3,7 +3,7 @@
         $attachment_id = block_value( 'bild' );
         echo($attachment_id);
         $url = wp_get_attachment_image_src( $attachment_id, $size = 'card');
-        echo($url);
+        print_r($url);
     ?>
     <img src="<?php echo $url; ?>" alt="" class="card-hover-img">
     <div class="card-content">
