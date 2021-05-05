@@ -1,4 +1,6 @@
 .card {
+  position: relative;
+
   p, span.card-title {
     padding-left: $small-gap;
     padding-right: $small-gap;
@@ -9,6 +11,12 @@
 
       &:hover {
         color: #aaa;
+      }
+
+      &.card-link {
+        position: absolute;
+        bottom: .5rem;
+        right: .5rem;
       }
     }
   }
