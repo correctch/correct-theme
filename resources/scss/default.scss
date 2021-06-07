@@ -32,7 +32,7 @@ body {
   background: $lightgrey;
 
   @include breakpoint('lg') {
-      padding-top: $gap;
+      padding-top: $mobile-header-height;
   }
 }
 
@@ -83,7 +83,7 @@ strong {
   width: 100%;
 
   @include breakpoint('lg','min') {
-    padding: 2.5rem 0 2.5rem;
+    padding: 2.5rem $small-gap 2.5rem;
     position: sticky;
     top: 0;
     z-index: 9999;

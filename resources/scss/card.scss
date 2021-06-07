@@ -31,6 +31,10 @@
     font-size: 25px;
     display: block;
   }
+
+  img.card-img {
+    width: 100%;
+  }
 }
 
 // Team Group of Cards
@@ -65,7 +69,7 @@
     }
   }
 
-  @include breakpoint('lg') {
+  @include breakpoint('xl') {
     margin-left: -$gap;
     max-width: $text-container-max-width;
   }

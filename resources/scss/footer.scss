@@ -2,21 +2,25 @@
 #footer {
   position: relative;
   margin: 4rem 0px 0px;
-  padding: 4rem 0px 4rem;
+  padding: 4rem 0 4rem;
 
   &.with-post {
     margin: 14rem 0px 0px;
-    padding: 7rem 0px 4rem;
-  
+    padding: 7rem 0 4rem;
+
     @include breakpoint('sm') {
-        margin: 0;
+      margin: 0;
     }
+  }
+
+  .container {
+    padding-left: $small-gap;
+    padding-right: $small-gap;
   }
 
   @include breakpoint('lg') {
     margin-top: 3rem;
-    padding-top: 1rem;
-    padding-bottom: 0rem;
+    padding: 1rem $small-gap 0;
     text-align: center;
 
     .row {
