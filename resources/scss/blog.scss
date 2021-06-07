@@ -35,7 +35,7 @@ $margin-side: 1em;
     min-height: 660px;
   }
 
-  @include breakpoint('md') {
+  @include breakpoint('sm') {
     max-width: 100%;
     min-width: 100%;
     min-height: unset;

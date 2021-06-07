@@ -42,7 +42,7 @@
   margin-left: $margin-diff;
   max-width: $container-max-width;
   width: 100vw;
-  overflow-x: scroll;
+  overflow-x: auto;
 
   @include breakpoint('sm'){
      margin-bottom: 2em;

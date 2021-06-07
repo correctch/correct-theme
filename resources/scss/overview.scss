@@ -55,7 +55,7 @@
   opacity: 1;
 }
 
-.overview > .card > .card-hover-img {
+.overview > .card > .card-img {
   filter: grayscale(100%);
   height: 100%;
   width: 100%;
@@ -63,7 +63,7 @@
   transition: all 1s ease-in-out;
 }
 
-.overview > .card:hover > .card-hover-img {
+.overview > .card:hover > .card-img {
   filter: grayscale(0%);
 }
 
