@@ -4,9 +4,8 @@
                 $instagram = get_theme_mod('instagram_link_block');
                 $linkedin = get_theme_mod('linkedin_link_block');
                 $twitter = get_theme_mod('twitter_link_block');
-                $youtube = get_theme_mod('youtube_link_block');
 
-                if (!$facebook == "" || !$instagram == "" || !$twitter == "" || !$linkedin == "" || !$youtube == "") {
+                if (!$facebook == "" || !$instagram == "" || !$twitter == "" || !$linkedin == "") {
                     ?>
                     <h4>Social Media</h4>
                     <?php
@@ -15,13 +14,6 @@
                     ?>
                     <a class="social-icon" href="<?php echo $linkedin ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/brands/linkedin.png" alt="">
-                    </a>
-                    <?php
-                }
-                if (!$youtube == "") {
-                    ?>
-                    <a class="social-icon" href="<?php echo $youtube ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/brands/youtube.svg" alt="">
                     </a>
                     <?php
                 }

@@ -22,13 +22,19 @@ if ($type === 'vid') {
 ?>
 
 <div class="media-text-wrapper-container">
-    <div class="media-text-wrapper">
+    <div class="media-text-wrapper media-text-<?php echo block_field('color')?>">
         <div class="media">
             <?php echo $media ?>
         </div>
         <div class="text">
             <h3 class="title"><?php block_field('titel'); ?></h3>
-            <span class="paragraph"><?php block_field('text'); ?></span>
+            <ul>
+                <?php for ($i = 1; $i <= 5; $i++) {
+                    if (strlen(block_value('list-title-' . $i)) > 2 && strlen(block_value('list-text-' . $i)) > 2) { ?>
+                        <li><span class="list-title"><?php block_field('list-title-' . $i); ?></span><br><span class="list-text"><?php block_field('list-text-' . $i); ?></span></li>
+                    <?php }
+                } ?>
+            </ul>
             <a href="<?php block_field('button_url') ?? '' ?>"
                class="button"><?php block_field('button_text') ?? 'mehr erfahren' ?></a>
         </div>

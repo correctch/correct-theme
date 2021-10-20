@@ -61,6 +61,10 @@ $margin-side: 1em;
     margin-right: $margin-side;
   }
 
+  p {
+    color: white !important;
+  }
+
   .post-box-title {
     margin-top: $space-blog;
 
@@ -102,6 +106,37 @@ $margin-side: 1em;
     flex: 1;
     flex-basis: auto;
     vertical-align: bottom;
+    display: inline-flex;
+
+    span {
+      margin: auto 0;
+    }
+  }
+
+  .back-to-blogs {
+    flex: 1;
+    flex-basis: auto;
+    text-align: right;
+    display: inline-flex;
+    justify-content: end;
+
+    a {
+      margin: auto 0;
+    }
+
+    @media (max-width: 520px) {
+      display: none;
+    }
+  }
+
+}
+
+.back-to-blogs-mobile{
+  display: block;
+  margin: 3em 0;
+  text-align: center;
+  @media (min-width: 520.5px) {
+    display: none;
   }
 }
 

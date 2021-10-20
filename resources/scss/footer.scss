@@ -11,6 +11,14 @@
     @include breakpoint('sm') {
       margin: 0;
     }
+
+    @include breakpoint('md', 'max') {
+      padding: 3rem 0 4rem;
+    }
+  }
+
+  @include breakpoint('md', 'max') {
+    padding: 3rem 0 4rem;
   }
 
   .container {
@@ -92,10 +100,16 @@
     margin-top: 0;
     font-size: 22px;
     font-weight: normal;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    @include breakpoint('lg', 'max') {
+      text-align: center;
+    }
   }
 
   .col p {
     margin-top: 0px;
+    margin-bottom: 0;
   }
 
   .link {

@@ -1,15 +1,76 @@
 .wp-block-media-text, .media-text-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-column-gap: $gap;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   margin-left: $margin-diff;
   background: white;
   color: black;
-  height: $block-height-lg;
+  height: auto;
   border-radius: 0;
   width: 100vw;
   max-width: $container-max-width;
+
+  &.downloads {
+    .title{
+      text-align: left;
+      margin-bottom: 0.5em;
+    }
+
+    grid-template-columns: 2fr 3fr;
+
+
+    .media {
+      padding: 20px;
+      padding-right: 30px;
+    }
+
+    .button{
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1em;
+      top: unset;
+      right: unset;
+      bottom: unset;
+      left: unset;
+    }
+
+    img {
+      min-height: unset!important;
+      max-height: 500px;
+      height: auto!important;
+    }
+  }
+
+  li {
+    margin-bottom: 0.65rem;
+  }
+
+  .list-title {
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 1.6rem
+  }
+
+  &.media-text-accent {
+    h3 {
+      color: white;
+    }
+
+    .list-title {
+      color: $light-blue;
+    }
+
+    .list-text, p {
+      color: white;
+    }
+
+    li::marker {
+      color: $light-blue;
+    }
+  }
 
   @include breakpoint('xl') {
     margin-left: -$gap;
@@ -38,8 +99,14 @@
     padding-left: calc(1 * var(--grid-gap));
     position: relative;
 
-    p {
-      color: black;
+    ul {
+      width: 90%;
+      text-align: left;
+      margin-bottom: 4em;
+
+      li {
+
+      }
     }
 
     h2, h3, h4, .title {
@@ -65,7 +132,7 @@
       padding-left: 0;
       padding-right: calc(1 * var(--grid-gap));
     }
-    
+
     p a {
       text-decoration: underline;
 
@@ -76,7 +143,7 @@
   }
 
   .wp-block-media-text__media, .media {
-    height: $block-height-lg;
+    //   min-height: $block-height-lg;
 
     @include breakpoint('md') {
       height: auto;
@@ -92,7 +159,7 @@
   }
 }
 
-.media-text-wrapper .button, .wp-block-buttons {
+.media-text-wrapper .button, .media-text-wrapper .wp-block-buttons {
   position: absolute;
   right: $gap;
   bottom: $gap;
@@ -145,22 +212,21 @@
 }
 
 
-
-.wp-block-embed.is-type-video{
+.wp-block-embed.is-type-video {
   margin: 4rem 0;
-  
-  .wp-block-embed__wrapper{
-  	padding-top:56.25%;
-  	width: 100%;
-  	height: 100%;
-  	
-  	iframe {
-  		position:absolute;
-  		height: 100%;
-  		width: 100%;
-  		top: 0;
-  		left: 0;
-  	}
+
+  .wp-block-embed__wrapper {
+    padding-top: 56.25%;
+    width: 100%;
+    height: 100%;
+
+    iframe {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
   }
 } 
 

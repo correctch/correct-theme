@@ -98,7 +98,7 @@ function register_theme_customizer($wp_customize)
     $wp_customize->add_panel('text_blocks', array(
         'priority' => 500,
         'theme_supports' => '',
-        'title' => __('Texte'),
+        'title' => __('Texte & Links'),
         'description' => __('Set editable text for certain content.'),
     ));
 
@@ -106,6 +106,7 @@ function register_theme_customizer($wp_customize)
     addCustomField($wp_customize, 'impressum_text', __('Impressum'),'textarea');
     addCustomField($wp_customize, 'instagram_link', __('Instagram Link'),'link');
     addCustomField($wp_customize, 'twitter_link', __('Twitter Link'),'link');
+    addCustomField($wp_customize, 'youtube_link', __('Youtube Link'),'link');
     addCustomField($wp_customize, 'linkedin_link', __('Linkedin Link'),'link');
     addCustomField($wp_customize, 'facebook_link', __('Facebook Link'),'link');
     addCustomField($wp_customize, 'footer_adresse', __('Footer Adresse'),'textarea');
@@ -178,30 +179,35 @@ function theme_get_customizer_css()
     $accent_color = get_theme_mod('accent_color', '');
     if (!empty($accent_color)) {
         ?>
-        #footer, .team-group .card, .pagination .nav-links .page-numbers.current {
+        #footer, .team-group .card.card-accent, .pagination .nav-links .page-numbers.current,
+        .media-text-wrapper.media-text-accent, .menu-kontakt-container  a
+        {
             background: <?php echo $accent_color; ?> !important;
         }
 
+        .card-white .card-list *{
+            color: <?php echo $accent_color; ?> !important;
+        }
         <?php
     }
 
     $main_color = get_theme_mod('main_color', '');
     if (!empty($main_color)) {
         ?>
-        h1, h2, h3, h4, h2.page-title,
         #cssmenu ul li.current_page_item > span a,
         #cssmenu ul li.current-menu-ancestor > span a,
         #cssmenu ul li.current-menu-item > span a,
         #cssmenu ul li.current-menu-parent > span a,
-        .nav-link:hover, .text a:not(.button), a.link:not(.button), a.link:not(.wp-block-button__link),
-        .menu-item-has-children > ul.nav-expand-content,
-        .main-color, .main-color-on-hover:hover {
+        .media-text-wrapper.media-text-white .list-title,  .media-text-wrapper.media-text-white li::marker,
+        .step__details-list li::marker, .read-less, .read-more,
+        .text a:not(.button):not(.wp-block-button__link), a.link:not(.button):not(.wp-block-button__link)
+        .menu-item-has-children > ul.nav-expand-content, .step__title,
+        .main-color, .main-color-on-hover:hover, .card-white .card-catchphrase {
             color: <?php echo $main_color; ?> !important;
         }
 
         .card-box .card-box-action, .button, .pagination .nav-links .page-numbers,
-        .menu-kontakt-container a,
-        .main-background {
+        .main-background, #header {
             background: <?php echo $main_color; ?> !important;
         }
 

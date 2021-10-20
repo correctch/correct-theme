@@ -45,6 +45,7 @@
             crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/script.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/defer.js" defer></script>
+    <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
 </head>
 <body>
 <div id="header">

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div class="container">
         <?php if (has_post_thumbnail() || !wp_is_mobile()) { ?>
-            <div class="img-section">
+            <div class="img-section" class="position-relative">
                 <?php if (has_post_thumbnail()) {
                     if (wp_is_mobile()) {
                         the_post_thumbnail('banner-image', ['class' => 'main-img']);
@@ -9,6 +9,16 @@
                         the_post_thumbnail('side-image', ['class' => 'main-img']);
                     }
                 } ?>
+                <?php if (get_field('main-image__button-link') || get_field('main-image__title')) { ?>
+                    <div class="av-section-color-overlay"></div>
+                <?php } ?>
+                <div id="image-text-wrapper">
+                    <h1 id="main-image-text"><?php echo get_field('main-image__title'); ?></h1>
+                    <?php if (get_field('main-image__button-link')) { ?>
+                        <a class="button" id="main-image-button"
+                           href="<?php echo get_field('main-image__button-link'); ?>"><?php echo get_field('main-image__button-text'); ?></a>
+                    <?php } ?>
+                </div>
             </div>
         <?php } ?>
         <div class="text-container" id="page-content">

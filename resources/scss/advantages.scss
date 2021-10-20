@@ -1,0 +1,23 @@
+.advantages {
+
+    margin-bottom: 1em;
+
+    > div {
+      display: inline-block;
+    }
+
+    .advantage__title{
+      font-weight: bold;
+      font-size: 1.15rem;
+    }
+
+    .advantage__check{
+      width: 24px;
+      height: 24px;
+      vertical-align: top;
+    }
+
+  .advantage__details{
+    width: calc(100% - 30px);
+  }
+}

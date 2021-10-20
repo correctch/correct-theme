@@ -62,3 +62,57 @@ $(function(){
         }
     });
 });
+
+/**
+ * Explantion Display/Hide List
+ */
+
+$(function (){
+   $('.step__abstract .read-more').click(function (){
+       console.log('here')
+       $('.step__details').hide();
+       $('.read-less').hide();
+       $('.read-more').show();
+       $(this).parent().next('.step__details').show();
+       $(this).siblings('.read-less').show();
+       $(this).hide();
+   })
+
+    $('.step__abstract .read-less').click(function (){
+        $(this).parent().next('.step__details').hide();
+        $(this).hide();
+        $(this).siblings('.read-more').show();
+    })
+
+    $('.founder__text .read-more').click(function (){
+        console.log('here')
+        $(this).siblings('.founder__more').show();
+        $(this).siblings('.read-less').show();
+        $(this).hide();
+    })
+
+    $('.founder__text .read-less').click(function (){
+        $(this).siblings('.founder__more').hide();
+        $(this).hide();
+        $(this).siblings('.read-more').show();
+    })
+
+    $(".explanation-step").filter(function(index, element){
+        return (index+1) % 3 == 1;
+    }).addClass("primary");
+
+    $(".explanation-step").filter(function(index, element){
+        return (index+1) % 3 == 0;
+    }).addClass("third");
+
+    var iframes = $('iframe');
+    iframes.each(function (index, elem){
+        console.log($(elem))
+        console.log(index)
+        if ($(elem).length) {
+            $(elem).attr('src',$(elem).attr('src') + "&title=0&portrait=0&byline=0");
+            return false;
+        }
+        return true;
+    })
+});

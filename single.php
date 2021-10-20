@@ -23,10 +23,17 @@
                     <?php echo get_avatar(get_the_author_meta('ID'), 100); ?>
                 </div>
                 <div class="author-meta">
-                    <br>
-                    <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?><br>
-                    <?php the_date('d.m.Y'); ?>
+                    <span>
+                        <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?><br>
+                        <?php the_date('d.m.Y'); ?>
+                    </span>
                 </div>
+                <div class="back-to-blogs">
+                    <a class="button" href="">Zur Beitragsübersicht</a>
+                </div>
+            </div>
+            <div class="back-to-blogs-mobile">
+                <a class="button" href="/blog">Zur Beitragsübersicht</a>
             </div>
         <?php endwhile; endif; ?>
     </div>
