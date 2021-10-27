@@ -46,6 +46,14 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/script.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/defer.js" defer></script>
     <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBS0LZ9WJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-WBS0LZ9WJC');
+    </script>
 </head>
 <body>
 <div id="header">
