@@ -9,7 +9,7 @@
             }
         } ?>
     </div>
-    <div class="text-container" id="page-content">
+    <div class="text-container blog-text" id="page-content">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <h2 class="page-title"><?php the_title(); ?></h2>
             <div class="abstract">
@@ -29,7 +29,7 @@
                     </span>
                 </div>
                 <div class="back-to-blogs">
-                    <a class="button" href="">Zur Beitragsübersicht</a>
+                    <a class="button" href="/blog">Zur Beitragsübersicht</a>
                 </div>
             </div>
             <div class="back-to-blogs-mobile">

@@ -11,7 +11,7 @@
 @import "card";
 @import "advantages";
 @import "cutsom-blocks";
-
+@import "bootstrap-form";
 * {
   box-sizing: border-box;
   font-size: 18px;
@@ -54,6 +54,7 @@ h1 {
   @media(max-width: 576px) {
     font-size: 2.2rem;
     padding: 0 15px;
+    hyphens: auto;
   }
 }
 
@@ -71,6 +72,7 @@ h2 {
   @media(max-width: 576px) {
     font-size: 1.8rem;
     padding: 0 15px;
+    hyphens: auto;
   }
 
   &:after {
@@ -100,7 +102,11 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 h2 {
@@ -128,6 +134,11 @@ strong {
 
 .text-container {
   max-width: $text-container-max-width;
+
+  &.blog-text{
+    max-width: $text-container-small-max-width;
+  }
+
   width: 100%;
   margin: 0 auto;
 }
@@ -137,15 +148,15 @@ strong {
 }
 
 #header {
-  width: 100%;
   z-index: 999;
+  width: 100%;
+
   @include breakpoint('lg', 'min') {
     padding: 1.5rem $small-gap;
     position: sticky;
     top: 0;
     z-index: 9999;
     background: white;
-
     > .container {
       position: relative;
     }
@@ -156,7 +167,6 @@ strong {
     background: $header-color;
     padding: 0px $gap;
     border-bottom: 1px solid #aaa;
-
     position: fixed;
     height: $mobile-header-height;
 
@@ -244,7 +254,6 @@ a {
 /* Page Abstract */
 .abstract p {
   font-size: 1.25rem;
-  color: var(--green);
   font-weight: 600;
   padding: 0px 0 1rem;
   line-height: 1.8rem;
@@ -253,6 +262,7 @@ a {
 
 li {
   margin-bottom: 0.4rem;
+  list-style: square;
 }
 
 /* Text */

@@ -8,6 +8,8 @@ $small-gap: $gap/2;
 
 $container-max-width: 1250px; //maybe go for 1400
 $text-container-max-width: 1100px; //maybe go for 1000
+$text-container-small-max-width: 920px; //maybe go for 1000
+
 $container-width-diff: $container-max-width - $text-container-max-width;
 $margin-diff: -($container-width-diff)/2 - $gap;
 

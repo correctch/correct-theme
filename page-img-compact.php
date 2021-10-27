@@ -17,6 +17,18 @@
                 <?php if (get_field('main-image__button-link')) { ?>
                     <a class="button" id="main-image-button"
                        href="<?php echo get_field('main-image__button-link'); ?>"><?php echo get_field('main-image__button-text'); ?></a>
+                <?php } elseif (get_field('search_type') && get_field('search_type') == 1) { ?>
+                    <form action="http://dokumentengenerator.correct.ch/suchen" target="__blank" method="get" id="search-form-header">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control search-input" name="filter" placeholder="Vorlagen durchsuchen">
+                        <div class="input-group-append">
+                            <input type="submit" class="button btn btn-primary border-main-color" value="suchen">
+                        </div>
+                    </div>
+                </form>
                 <?php } ?>
             </div>
         </div>

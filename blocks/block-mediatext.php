@@ -22,7 +22,7 @@ if ($type === 'vid') {
 ?>
 
 <div class="media-text-wrapper-container">
-    <div class="media-text-wrapper media-text-<?php echo block_field('color')?>">
+    <div class="media-text-wrapper <?php echo (block_value('media-small') ? 'media-small' : '');?> media-text-<?php echo block_field('color')?>">
         <div class="media">
             <?php echo $media ?>
         </div>

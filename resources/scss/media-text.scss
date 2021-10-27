@@ -11,6 +11,15 @@
   width: 100vw;
   max-width: $container-max-width;
 
+  &.media-small {
+    .media {
+      padding: 20px;
+    }
+    img {
+      object-fit: contain!important;
+    }
+  }
+
   &.downloads {
     .title{
       text-align: left;

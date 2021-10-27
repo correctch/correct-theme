@@ -63,15 +63,17 @@
     position: absolute;
     width: 70%;
     display: inline-block;
-    left: 15%;
-    right: 15%;
+    left: 50%;
     bottom: -3.5em;
     text-align: center;
-    
+    transform: translateX(-50%);
+
+    @media (min-width: 992px) and (max-width: 1250px) {
+      width: 90%;
+    }
+
     @media (max-width: 750px) {
       width: 90%;
-      left: 5%;
-      right: 5%;
     }
   }
 

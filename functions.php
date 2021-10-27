@@ -185,8 +185,12 @@ function theme_get_customizer_css()
             background: <?php echo $accent_color; ?> !important;
         }
 
-        .card-white .card-list *{
+        .card-white .card-list *, .text-part, .date, #footer .title{
             color: <?php echo $accent_color; ?> !important;
+        }
+
+        p, .list-text, div{
+        color: <?php echo $accent_color; ?>;
         }
         <?php
     }
