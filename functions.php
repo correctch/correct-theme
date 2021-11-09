@@ -180,7 +180,7 @@ function theme_get_customizer_css()
     if (!empty($accent_color)) {
         ?>
         #footer, .team-group .card.card-accent, .pagination .nav-links .page-numbers.current,
-        .media-text-wrapper.media-text-accent, .menu-kontakt-container  a
+        .media-text-wrapper.media-text-accent, #menu-kontakt  a
         {
             background: <?php echo $accent_color; ?> !important;
         }
@@ -211,7 +211,7 @@ function theme_get_customizer_css()
         }
 
         .card-box .card-box-action, .button, .pagination .nav-links .page-numbers,
-        .main-background, #header {
+        .main-background, #header,  #contact-menu-mobile > a {
             background: <?php echo $main_color; ?> !important;
         }
 

@@ -12,7 +12,7 @@ $text-container-small-max-width: 920px; //maybe go for 1000
 
 $container-width-diff: $container-max-width - $text-container-max-width;
 $margin-diff: -($container-width-diff)/2 - $gap;
-
+$margin-diff-blog: -($container-max-width - $text-container-small-max-width)/2 - $gap;
 // colors
 $background-blue: #3b4856;
 $yellow: #e49d22;

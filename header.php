@@ -55,7 +55,7 @@
         gtag('config', 'G-WBS0LZ9WJC');
     </script>
 </head>
-<body>
+<body <?php if (isset($page)){echo 'class="landing-page"';} ?>>
 <div id="header">
     <div class="container">
         <div class="logo">
@@ -63,8 +63,20 @@
                 the_custom_logo();
             } ?>
         </div>
-        <?php require('includes/nav.php'); ?>
+        <?php
+        if (!isset($page)){
+            require('includes/nav.php');
+        }else{
+        wp_nav_menu([
+            'menu' => 'contact',
+            'container_id' => 'contact-menu',
+            'walker' => new CSS_Menu_Maker_Walker()
+        ]);
+        }
+        ?>
+        <?php if (!isset($page)){ ?>
         <button class="menu-toggle"></button>
+        <?php } ?>
     </div>
-    <?php require('includes/mobile-nav.php'); ?>
+    <?php if (!isset($page)){ require('includes/mobile-nav.php'); } ?>
 </div>
