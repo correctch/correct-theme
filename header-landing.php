@@ -49,13 +49,19 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBS0LZ9WJC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-WBS0LZ9WJC');
     </script>
 </head>
-<body <?php if (isset($page) && $page === 'landing'){echo 'class="landing-page"';} ?>>
+<body <?php if (isset($page) && $page === 'landing') {
+    echo 'class="landing-page"';
+} ?>>
 <div id="header">
     <div class="container">
         <div class="logo">
@@ -64,19 +70,11 @@
             } ?>
         </div>
         <?php
-        if (!isset($page) || (isset($page) && $page !== 'landing')){
-            require('includes/nav.php');
-        }else{
-        wp_nav_menu([
-            'menu' => 'contact',
-            'container_id' => 'contact-menu',
-            'walker' => new CSS_Menu_Maker_Walker()
-        ]);
-        }
+            wp_nav_menu([
+                'menu' => 'contact',
+                'container_id' => 'contact-menu',
+                'walker' => new CSS_Menu_Maker_Walker()
+            ]);
         ?>
-        <?php if (!isset($page) || (isset($page) && $page !== 'landing')){?>
-        <button class="menu-toggle"></button>
-        <?php } ?>
     </div>
-    <?php if (!isset($page) || (isset($page) && $page !== 'landing')){ require('includes/mobile-nav.php'); } ?>
 </div>

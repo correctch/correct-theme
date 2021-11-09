@@ -1,6 +1,6 @@
 <?php /* Template Name: Landing Page Vorlage*/ ?>
-<?php get_header(null, ['page' => 'landing']); ?>
-    <div class="container">
+<?php get_header('landing', ['page' => 'landing']); ?>
+    <div class="container landing-page">
         <?php if (has_post_thumbnail()) { ?>
             <div class="img-section" class="position-relative">
                 <?php if (has_post_thumbnail()) {
