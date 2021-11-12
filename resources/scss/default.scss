@@ -13,6 +13,7 @@
 @import "cutsom-blocks";
 @import "bootstrap-form";
 @import "landing_pages";
+@import "modal";
 * {
   box-sizing: border-box;
   font-size: 18px;
@@ -185,7 +186,7 @@ strong {
   margin-top: 0rem;
   background: $lightgrey;
   padding: 0 $gap $gap; // damit zwischen bild und text noch weisser rand ist
-  z-index: 2;
+  z-index: 6;
   position: relative;
 
   @include breakpoint('sm') {

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
     <div class="container">
-        <?php if (has_post_thumbnail() || !wp_is_mobile()) { ?>
+        <?php if (has_post_thumbnail()) { ?>
             <div class="img-section" class="position-relative">
                 <?php if (has_post_thumbnail()) {
                     if (wp_is_mobile()) {

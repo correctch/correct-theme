@@ -85,9 +85,12 @@
 
   span.card-title {
     padding-top: $small-gap;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: bold;
     display: block;
+    @media (min-width: 575.5px) and (max-width: 660px) {
+      font-size: 22px;
+    }
   }
 
   span.card-subtitle{
@@ -143,7 +146,12 @@
     max-width: $text-container-max-width;
   }
 
-  @include breakpoint('md') {
+  @include breakpoint('lg', 'max') {
+    margin-left: -$gap;
+    max-width: $text-container-max-width;
+  }
+
+  @include breakpoint('sm', 'max'){
     margin-left: 0px;
     width: 100%;
   }

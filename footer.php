@@ -23,9 +23,6 @@
             <div class="col">
                 <h4>Links</h4>
                 <?php echo get_theme_mod('footer_links_block'); ?>
-                <p>
-                    <a class="link" href="/impressum">Impressum</a>
-                </p>
             </div>
             <div class="col">
                 <h4>Kontakt</h4>

@@ -1,15 +1,15 @@
 <?php /* Template Name: Bild über Text und Abstract*/ ?>
 <?php get_header(); ?>
     <div class="container page-img-compact">
-        <div class="img-section">
-            <?php if (has_post_thumbnail()) {
-                if (wp_is_mobile()) {
+        <?php if (has_post_thumbnail()) { ?>
+            <div class="img-section">
+                <?php if (wp_is_mobile()) {
                     the_post_thumbnail('banner-image', ['class' => 'main-img']);
                 } else {
                     the_post_thumbnail('side-image', ['class' => 'main-img']);
-                }
-            } ?>
-        </div>
+                } ?>
+            </div>
+        <?php } ?>
         <div class="text-container" id="page-content">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php
