@@ -62,6 +62,7 @@ function register_my_menus()
 
 add_action('init', 'register_my_menus');
 
+//add custom fields function
 function addCustomField($wp_customize, $name, $title, $type) {
     // Add Section
     $wp_customize->add_section($name, array(
