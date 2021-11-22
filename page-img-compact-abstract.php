@@ -1,4 +1,4 @@
-<?php /* Template Name: Bild über Text und Abstract*/ ?>
+<?php /* Template Name: Seite mit Abstract*/ ?>
 <?php get_header(); ?>
     <div class="container page-img-compact">
         <?php if (has_post_thumbnail()) { ?>

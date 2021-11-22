@@ -6,7 +6,7 @@
     <div class="citation__image-wrapper">
         <?php
         $attachment_id = block_value('bild');
-        $url = wp_get_attachment_image_src($attachment_id, $size = 'card')[0];
+        $url = wp_get_attachment_image_src($attachment_id, $size = 'citation')[0];
         ?>
         <img src="<?php echo $url; ?>" alt="" class="citation-image">
     </div>

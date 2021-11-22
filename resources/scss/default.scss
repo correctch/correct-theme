@@ -260,6 +260,9 @@ a {
   padding: 0px 0 1rem;
   line-height: 1.8rem;
   margin-top: 0px;
+  a {
+    font-size: inherit;
+  }
 }
 
 li {

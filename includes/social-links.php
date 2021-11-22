@@ -13,35 +13,35 @@
                 }
                 if (!$linkedin == "") {
                     ?>
-                    <a class="social-icon" href="<?php echo $linkedin ?>">
+                    <a class="social-icon" href="<?php echo $linkedin ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/brands/linkedin.png" alt="">
                     </a>
                     <?php
                 }
                 if (!$youtube == "") {
                     ?>
-                    <a class="social-icon" href="<?php echo $youtube ?>">
+                    <a class="social-icon" href="<?php echo $youtube ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/brands/youtube.svg" alt="">
                     </a>
                     <?php
                 }
                 if (!$twitter == "") {
                     ?>
-                <a class="social-icon" href="<?php echo $twitter ?>">
+                <a class="social-icon" href="<?php echo $twitter ?>" target="_blank">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/brands/twitter.png" alt="">
                 </a>
                 <?php
                 }
                 if (!$facebook == "") {
                     ?>
-                    <a class="social-icon" href="<?php echo $facebook ?>">
+                    <a class="social-icon" href="<?php echo $facebook ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/brands/facebook.png" alt="">
                     </a>
                     <?php
                 }
                 if (!$instagram == "") {
                     ?>
-                    <a class="social-icon" href="<?php echo $instagram ?>">
+                    <a class="social-icon" href="<?php echo $instagram ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/brands/instagram.png" alt="">
                     </a>
                     <?php

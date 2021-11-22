@@ -1,13 +1,11 @@
 <?php get_header(); ?>
-    <div class="container">
+    <div class="container page-img-compact">
         <?php if (has_post_thumbnail()) { ?>
             <div class="img-section" class="position-relative">
-                <?php if (has_post_thumbnail()) {
-                    if (wp_is_mobile()) {
-                        the_post_thumbnail('banner-image', ['class' => 'main-img']);
-                    } else {
-                        the_post_thumbnail('side-image', ['class' => 'main-img']);
-                    }
+                <?php if (wp_is_mobile()) {
+                    the_post_thumbnail('banner-image', ['class' => 'main-img']);
+                } else {
+                    the_post_thumbnail('side-image', ['class' => 'main-img']);
                 } ?>
                 <?php if (get_field('main-image__button-link') || get_field('main-image__title')) { ?>
                     <div class="av-section-color-overlay"></div>
@@ -17,6 +15,21 @@
                     <?php if (get_field('main-image__button-link')) { ?>
                         <a class="button" id="main-image-button"
                            href="<?php echo get_field('main-image__button-link'); ?>"><?php echo get_field('main-image__button-text'); ?></a>
+                    <?php } elseif (get_field('search_type') && get_field('search_type') == 1) { ?>
+                        <form action="https://dokumentengenerator.correct.ch/suchen" target="__blank" method="get"
+                              id="search-form-header">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control search-input" name="filter"
+                                       placeholder="Vorlagen durchsuchen">
+                                <div class="input-group-append">
+                                    <input type="submit" class="button btn btn-primary border-main-color"
+                                           value="suchen">
+                                </div>
+                            </div>
+                        </form>
                     <?php } ?>
                 </div>
             </div>
@@ -26,15 +39,8 @@
                 <?php
                 if (is_page() && $post->post_parent) {
                     $children = get_children(['post_parent' => $post->post_parent]);
-                    //var_dump($children);
                 }
                 ?>
-                <h2 class="page-title">
-                    <?php echo get_the_title(); ?>
-                </h2>
-                <div class="abstract">
-                    <?php echo get_extended(get_post()->post_content)['main'] ?>
-                </div>
                 <div class="text">
                     <?php the_content(null, true); ?>
                 </div>

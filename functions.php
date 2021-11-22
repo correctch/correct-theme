@@ -32,6 +32,7 @@ function add_custom_sizes()
     add_image_size('card', 400, 300, true);
     add_image_size('card-medium', 600, 450, true);
     add_image_size('card-big', 800, 600, true);
+    add_image_size('citation', 256, 256, true);
 }
 
 add_action('after_setup_theme', 'add_custom_sizes');
@@ -206,7 +207,7 @@ function theme_get_customizer_css()
         .step__details-list li::marker, .read-less, .read-more,
         .text a:not(.button):not(.wp-block-button__link), a.link:not(.button):not(.wp-block-button__link)
         .menu-item-has-children > ul.nav-expand-content, .step__title,
-        .main-color, .main-color-on-hover:hover, .card-white .card-catchphrase {
+        .main-color, .main-color-on-hover:hover, .card-white .card-catchphrase, .abstract a {
             color: <?php echo $main_color; ?> !important;
         }
 
