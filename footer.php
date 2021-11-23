@@ -6,6 +6,8 @@
         'posts_per_page' => 3,
         'post__not_in' => [get_the_ID()]
     ));
+
+    var_dump($post_query['post_count']);
 ?>
 
 <div id="footer" class="<?php if($show_post && $post_query->have_posts()) { echo('with-post'); } ?>">
