@@ -2,12 +2,8 @@
     $show_post = !isset($args['show_post']) || $args['show_post'];
     $post_query = new WP_Query(array(
         'post_type' => 'post',
-        'orderby' => 'rand',
-        'posts_per_page' => 3,
-        'post__not_in' => [get_the_ID()]
     ));
-
-    var_dump($post_query['post_count']);
+    var_dump($post_query);
 ?>
 
 <div id="footer" class="<?php if($show_post && $post_query->have_posts()) { echo('with-post'); } ?>">

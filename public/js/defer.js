@@ -168,7 +168,6 @@ window.addEventListener('message', event => {
     if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
         setCookie('hubspotRegistration', event.data.id, 365);
         is_hubspot_user = true;
-        dataLayer.push({'event': 'download-pdf', 'href': $('#download-direct-'+event.data.id).attr('href')});
         $('.download-direct').each(function (index, elem){
            $(this).css('display', 'inline-block');
         });
