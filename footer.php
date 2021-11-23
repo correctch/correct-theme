@@ -3,7 +3,7 @@
     $post_query = new WP_Query(array(
         'post_type' => 'post',
     ));
-    var_dump($post_query);
+    var_dump($post_query->posts);
 ?>
 
 <div id="footer" class="<?php if($show_post && $post_query->have_posts()) { echo('with-post'); } ?>">
