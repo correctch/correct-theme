@@ -16,7 +16,7 @@
                         <a class="button" id="main-image-button"
                            href="<?php echo get_field('main-image__button-link'); ?>"><?php echo get_field('main-image__button-text'); ?></a>
                     <?php } elseif (get_field('search_type') && get_field('search_type') == 1) { ?>
-                        <form action="https://dokumentengenerator.correct.ch/suchen" target="__blank" method="get"
+                        <form action="https://app.dokumentengenerator.correct.ch/suchen" target="__blank" method="get"
                               id="search-form-header">
                             <div class="input-group">
                                 <div class="input-group-prepend">
