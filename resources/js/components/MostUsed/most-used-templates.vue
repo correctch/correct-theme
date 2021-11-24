@@ -45,7 +45,6 @@ export default {
   },
   mounted() {
     let prefix =  'https://app.dokumentengenerator';
-    prefix = 'localhost:8000'
     axios.post(prefix+'/api/v1/templates/favourites')
         .then(response => {
           this.templates = response.data.templates;
