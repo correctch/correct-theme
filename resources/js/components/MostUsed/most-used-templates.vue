@@ -13,8 +13,7 @@
         <button class="btn btn-primary btn-block mb-2" @click="openModal(index)">Mehr erfahren</button>
       </div>
     </div>
-    <landing-create-doc-modal :modal_name="modal_name" :template="tempTemp"
-                              :create_route="create_route"></landing-create-doc-modal>
+    <landing-create-doc-modal :modal_name="modal_name" :template="tempTemp" :create_route="create_route"></landing-create-doc-modal>
   </div>
 </template>
 
@@ -24,10 +23,12 @@ import LandingCreateDocModal from "./create_doc_modal";
 export default {
   name: "most-used-templates.vue",
   components: {LandingCreateDocModal},
+  props:{
+    asset: String
+  },
   data() {
     return {
       create_route: '',
-      asset: '',
       templates: [],
       tempTemp: {
         title: '',
