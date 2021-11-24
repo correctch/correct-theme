@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     async getData(){
-      let prefix =  'https://app.dokumentengenerator';
+      let prefix =  'https://app.dokumentengenerator.ch';
       await axios.post(prefix+'/api/templates/favourites', {})
           .then(response => {
             this.templates = response.data.templates;
