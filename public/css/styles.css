@@ -2073,6 +2073,37 @@ select.form-input, input.form-input, textarea.form-input {
   color: white;
 }
 
+.doc-wrapper {
+  background: white;
+  border: 1px solid #3b4856;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+}
+
+.doc-wrapper .doc-image {
+  border-bottom: 1px solid #3b4856;
+}
+
+.doc-wrapper .doc-image img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.doc-wrapper .doc-title {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.doc-wrapper .doc-type, .doc-wrapper .doc-created {
+  margin-bottom: 0.75em;
+}
+
 * {
   box-sizing: border-box;
   font-size: 18px;

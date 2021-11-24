@@ -3,8 +3,6 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Vue from 'vue/dist/vue.common.js';
-import VueCookies from 'vue-cookies'
-
 window.Vue = Vue;
 Vue.component('most-used-templates', require('./components/MostUsed/most-used-templates').default);
 const app = new Vue({}).$mount('#app');

@@ -3,7 +3,6 @@
     <div class="col-10 col-xs-5 col-sm-5 col-md-4 col-lg-3 col-xl-2 col-xxl-2 p-2 "
          v-for="(template, index) in templates" :key="'template'+template.id">
       <div class="doc-wrapper" @click="openModal(index)">
-        <md-tooltip class="custom-tooltip" md-direction="top">Klicken Sie mich an</md-tooltip>
         <div class="doc-image">
           <img :src="asset">
         </div>
@@ -44,16 +43,19 @@ export default {
     }
   },
   mounted() {
-    let prefix =  'https://app.dokumentengenerator';
-    axios.post(prefix+'/api/v1/templates/favourites')
-        .then(response => {
-          this.templates = response.data.templates;
-        })
-        .catch(error => {
-          console.log(error);
-        })
+   this.getData();
   },
   methods: {
+    async getData(){
+      let prefix =  'https://app.dokumentengenerator';
+      await axios.post(prefix+'/api/templates/favourites')
+          .then(response => {
+            this.templates = response.data.templates;
+          })
+          .catch(error => {
+            console.log(error);
+          })
+    },
     openModal(index) {
       this.tempTemp = null;
       this.tempTemp = this.templates[index];
