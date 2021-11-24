@@ -1,6 +1,6 @@
 <?php /* Template Name: Bild über Text */ ?>
 <?php get_header(); ?>
-    <div class="container page-img-compact">
+    <div id="app" data-app class="container page-img-compact">
         <?php if (has_post_thumbnail()) { ?>
             <div class="img-section" class="position-relative">
                 <?php if (wp_is_mobile()) {

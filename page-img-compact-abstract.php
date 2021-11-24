@@ -1,6 +1,6 @@
 <?php /* Template Name: Seite mit Abstract*/ ?>
 <?php get_header(); ?>
-    <div class="container page-img-compact">
+    <div id="app" data-app class="container page-img-compact">
         <?php if (has_post_thumbnail()) { ?>
             <div class="img-section">
                 <?php if (wp_is_mobile()) {

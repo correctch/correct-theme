@@ -1,3 +1,16 @@
+window.axios = require('axios');
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+import Vue from 'vue/dist/vue.common.js';
+import VueCookies from 'vue-cookies'
+
+window.Vue = Vue;
+Vue.use(VueCookies);
+Vue.$cookies.config('365d', '', '', true);
+
+const app = new Vue({}).$mount('#app');
+
 // JS Script to load as last
 
 /**
@@ -7,6 +20,12 @@ $(".accordion-header").click(function () {
     $(this).next('.accordion-content').slideToggle();
     $(this).parent().toggleClass("open");
 });
+
+$(function(){
+    $('button.menu-toggle').on('click', function(){
+        $('body').toggleClass('nav-is-toggled');
+    });
+})
 
 /**
  * Search Form
@@ -169,7 +188,7 @@ window.addEventListener('message', event => {
         setCookie('hubspotRegistration', event.data.id, 365);
         is_hubspot_user = true;
         $('.download-direct').each(function (index, elem){
-           $(this).css('display', 'inline-block');
+            $(this).css('display', 'inline-block');
         });
         $('.modal-button').each(function (index, elem){
             $(this).css('display', 'none');
