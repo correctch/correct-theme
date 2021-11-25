@@ -3,11 +3,10 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Vue from 'vue/dist/vue.common.js';
-import VueCookies from 'vue-cookies'
 
 window.Vue = Vue;
-Vue.use(VueCookies);
-Vue.$cookies.config('365d', '', '', true);
+Vue.component('most-used-templates', require('./components/MostUsed/most-used-templates').default);
+Vue.component('topic-templates', require('./components/TopicTemplates/templates-of-topic').default);
 
 const app = new Vue({}).$mount('#app');
 
@@ -136,14 +135,15 @@ $(function () {
     })
 
     $('.modal-button').click(function () {
-        let id = $(this).attr('id');
-        let unique = id.match('download-(.+)')[1];
-        $('#modal-' + unique).css('display', "block");
-        $('#modal-' + unique).addClass('active');
+        let unique = $(this).data('modal-target');
+        //let id = $(this).attr('id');
+        //let unique = id.match('download-(.+)')[1];
+        $('#'+unique).css('display', "block");
+        $('#'+unique).addClass('active');
     });
 
 // When the user clicks on <span> (x), close the modal
-    $('.close').click(function () {
+    $('.download-modal-close').click(function () {
         $(this).parent().parent().parent().css('display', "none");
         $(this).parent().parent().parent().removeClass('active');
     });
@@ -196,3 +196,10 @@ window.addEventListener('message', event => {
     }
 });
 
+
+// JS Script to load in header
+$(function(){
+    $('button.menu-toggle').on('click', function(){
+        $('body').toggleClass('nav-is-toggled');
+    });
+})

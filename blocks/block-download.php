@@ -43,13 +43,13 @@ $is_account = strlen($_COOKIE['hubspotRegistration']) > 0;
                            onclick="dataLayer.push({'event': 'download-pdf', 'href':this.href});"
                            href="<?php block_field('download-button-url') ?? '' ?>"
                            class="button download-direct"><?php block_field('download-button-text') ?? 'Download Dokument' ?></a>
-                        <a target="#" class="button modal-button"
+                        <a target="#" data-modal-target="modal-<?php echo $id ?>" class="button modal-button"
                            id="download-<?php echo $id ?>"><?php block_field('download-button-text') ?? 'Download Dokument' ?></a>
                         <div id="modal-<?php echo $id ?>" class="modal custom-modal">
                             <!-- Modal content -->
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <span class="close">&times;</span>
+                                    <span class="download-modal-close close">&times;</span>
                                     <h2>Registration für Zugriff</h2>
                                 </div>
                                 <div class="modal-body">

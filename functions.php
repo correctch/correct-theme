@@ -187,12 +187,16 @@ function theme_get_customizer_css()
             background: <?php echo $accent_color; ?> !important;
         }
 
-        .card-white .card-list *, .text-part, .date, #footer .title{
+        .card-white .card-list *, .text-part, .date, #footer .title, .card-white p,.card-white b{
             color: <?php echo $accent_color; ?> !important;
         }
 
         p, .list-text, div{
         color: <?php echo $accent_color; ?>;
+        }
+
+        .doc-image {
+            border-bottom: 1px solid  <?php echo $accent_color; ?>;
         }
         <?php
     }
@@ -206,7 +210,7 @@ function theme_get_customizer_css()
         #cssmenu ul li.current-menu-parent > span a,
         .media-text-wrapper.media-text-white .list-title,  .media-text-wrapper.media-text-white li::marker,
         .step__details-list li::marker, .read-less, .read-more,
-        .text a:not(.button):not(.wp-block-button__link), a.link:not(.button):not(.wp-block-button__link)
+        .text a:not(.button):not(.wp-block-button__link):not(.button-secondary), a.link:not(.button):not(.wp-block-button__link)
         .menu-item-has-children > ul.nav-expand-content, .step__title,
         .main-color, .main-color-on-hover:hover, .card-white .card-catchphrase, .abstract a {
             color: <?php echo $main_color; ?> !important;
