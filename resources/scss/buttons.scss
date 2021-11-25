@@ -1,6 +1,8 @@
 .button, .menu-kontakt-container a, .wp-block-button__link {
   background: #e49d22;
   color: #fff !important;
+}
+.button, .button-secondary, .menu-kontakt-container a, .wp-block-button__link {
   padding: 10px 34px;
   transition: all 0.5s ease-out;
   border-radius: 7px;
@@ -8,7 +10,13 @@
   cursor: pointer;
 }
 
-.button:hover, .menu-kontakt-container:hover a, .wp-block-button__link:hover {
+.button-secondary{
+  background: dimgrey!important;
+  color: white!important;
+  display: inline-block;
+}
+
+.button:hover, .button-secondary:hover, .menu-kontakt-container:hover a, .wp-block-button__link:hover {
   filter: brightness(70%);
   text-decoration: none;
 }

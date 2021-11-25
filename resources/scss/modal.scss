@@ -9,8 +9,28 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  &.active {
+    display: block;
+    .modal-dialog {
+      display: block!important;
+    }
+
+    .modal-content {
+      animation: fadeIn ease 0.9s;
+      -webkit-animation: fadeIn ease 0.9s;
+      -moz-animation: fadeIn ease 0.9s;
+      -o-animation: fadeIn ease 0.9s;
+      -ms-animation: fadeIn ease 0.9s;
+    }
+  }
 }
 
 /* Modal Content */
@@ -21,11 +41,7 @@
   padding: 0;
   border: 1px solid #888;
   width: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -33,13 +49,25 @@
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
 }
 
 @keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
 }
 
 /* The Close Button */
@@ -60,23 +88,33 @@
 .modal-header {
   padding: 2px 16px;
   background-color: $background-blue;
-  color: white!important;
+  color: white !important;
   position: relative;
   margin-bottom: 2em;
+
   h2 {
-    color: inherit!important;
-    &:after{
+    color: inherit !important;
+
+    &:after {
       display: none;
     }
   }
 }
 
-.modal-body {padding: 2px 16px;   position: relative;
+.modal-body {
+  padding: 2px 16px;
+  position: relative;
 }
 
 .modal-footer {
   position: relative;
-  padding: 2px 16px;
+  padding: 1em 16px;
+  justify-content: right;
   background-color: $background-blue;
   color: white;
+  display: flex;
+
+  > a {
+    margin-left: 1em;
+  }
 }

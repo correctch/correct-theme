@@ -20,14 +20,14 @@
 </template>
 
 <script>
-import LandingCreateDocModal from "./create_doc_modal";
+import LandingCreateDocModal from "../MostUsed/create_doc_modal";
 
 export default {
-  name: "most-used-templates.vue",
+  name: "TemplatesOfTopic",
   components: {LandingCreateDocModal},
   props: {
     asset: String,
-    limit: String,
+    topic_id: String,
   },
   data() {
     return {
@@ -37,7 +37,7 @@ export default {
         explanation: '',
         id: -1,
       },
-      modal_name: 'templateShowModal',
+      modal_name: 'topic-'+this.topic_id+'-Modal',
       new_doc: {
         name: '',
         case_number: '',
@@ -52,7 +52,7 @@ export default {
   methods: {
     async getData() {
       let prefix = 'https://app.dokumentengenerator.ch';
-      await axios.post(prefix + '/api/templates/favourites', {limit: this.limit})
+      await axios.get(prefix + '/api/topic/'+this.topic_id+'/templates')
           .then(response => {
             this.templates = response.data.templates;
           })

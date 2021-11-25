@@ -5,6 +5,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 import Vue from 'vue/dist/vue.common.js';
 window.Vue = Vue;
 Vue.component('most-used-templates', require('./components/MostUsed/most-used-templates').default);
+Vue.component('topic-templates', require('./components/TopicTemplates/templates-of-topic').default);
+
 const app = new Vue({}).$mount('#app');
 
 // JS Script to load as last
@@ -126,14 +128,15 @@ $(function () {
     })
 
     $('.modal-button').click(function () {
-        let id = $(this).attr('id');
-        let unique = id.match('download-(.+)')[1];
-        $('#modal-' + unique).css('display', "block");
-        $('#modal-' + unique).addClass('active');
+        let unique = $(this).data('modal-target');
+        //let id = $(this).attr('id');
+        //let unique = id.match('download-(.+)')[1];
+        $('#'+unique).css('display', "block");
+        $('#'+unique).addClass('active');
     });
 
 // When the user clicks on <span> (x), close the modal
-    $('.close').click(function () {
+    $('.download-modal-close').click(function () {
         $(this).parent().parent().parent().css('display', "none");
         $(this).parent().parent().parent().removeClass('active');
     });
