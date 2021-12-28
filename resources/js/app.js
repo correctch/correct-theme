@@ -20,12 +20,6 @@ $(".accordion-header").click(function () {
     $(this).parent().toggleClass("open");
 });
 
-$(function(){
-    $('button.menu-toggle').on('click', function(){
-        $('body').toggleClass('nav-is-toggled');
-    });
-})
-
 /**
  * Search Form
  */
@@ -72,7 +66,7 @@ $('.menu-item-home.current_page_item:not(:first)').removeClass("active");
 
 //get first active
 $(function () {
-    $('.menu-togle').click(function () {
+    $('.menu-toggle').click(function () {
         var elem = $('.current_page_item').first();
         //funktioniert
         if (elem.parent().hasClass('nav-expand-content')) {
@@ -198,6 +192,7 @@ window.addEventListener('message', event => {
 
 
 // JS Script to load in header
+
 $(function(){
     $('button.menu-toggle').on('click', function(){
         $('body').toggleClass('nav-is-toggled');
