@@ -128,28 +128,31 @@ $(function () {
         return true;
     })
 
+    $(window).click(function (event) {
+        if ($('.modal.active').length > 0) {
+            $('.modal.active').each(function (index, elem) {
+                $(this).removeClass('active');
+            })
+         //   $('body').removeClass('modal-toggled')
+         //   $('body').css('overflow', 'auto')
+        }
+    });
+
     $('.modal-button').click(function () {
         let unique = $(this).data('modal-target');
-        //let id = $(this).attr('id');
-        //let unique = id.match('download-(.+)')[1];
         $('#'+unique).css('display', "block");
         $('#'+unique).addClass('active');
+        $('body').css('overflow', 'hidden')
     });
 
 // When the user clicks on <span> (x), close the modal
     $('.download-modal-close').click(function () {
         $(this).parent().parent().parent().css('display', "none");
         $(this).parent().parent().parent().removeClass('active');
+        $('body').css('overflow', 'auto')
     });
 
 // When the user clicks anywhere outside of the modal, close it
-    $(window).click(function (event) {
-        if ($('.modal.active').length > 0) {
-            $('.modal.active').each(function (index, elem) {
-                $(this).removeClass('.active');
-            })
-        }
-    });
 });
 
 function getCookie(cname) {

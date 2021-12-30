@@ -2069,18 +2069,35 @@ select.form-input, input.form-input, textarea.form-input {
   -ms-animation: fadeIn ease 0.9s;
 }
 
+@media (max-width: 976px) {
+  .modal {
+    padding-top: unset;
+    top: 80px;
+    width: 100%;
+  }
+
+  .modal .hbspt-form {
+    padding-bottom: 6em;
+  }
+
+  .modal .modal-content {
+    width: 100%;
+    position: relative;
+    transform: unset;
+    min-height: 100vh;
+    margin-top: auto;
+  }
+}
 /* Modal Content */
 .modal-content {
-  position: absolute;
+  position: relative;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
   border: 1px solid #888;
   width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 80px;
 }
 
 /* Add Animation */
