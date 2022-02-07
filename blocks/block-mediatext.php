@@ -30,27 +30,22 @@ if ($type === 'vid') {
             <h3 class="title"><?php block_field('titel'); ?></h3>
             <ul>
                 <?php
-                if (block_rows('liste')) {
-                    while (block_rows('liste')) :
-                        block_row('liste');
-                        $title = block_sub_value('titel');
-                        $text = block_sub_value('subtext');
-                        if ($title || $text) {
-                            // Do something.
-                            echo "<li>";
-                            if ($title){
-                                echo "<span class=\"list-title\">".$title."</span>";
-                            }
-                            if ($title && $text){
-                                echo "<br>";
-                            }
-                            if ($text){
-                                echo "<span class=\"list-text\">".$text."</span>";
-                            }
-                            echo "</li>";
-                        }
-                    endwhile;
-                } else {
+                foreach (block_value('liste')["rows"] as $list_item){
+                    $title = $list_item['titel'];
+                    $text = $list_item['subtext'];
+                    echo "<li>";
+                    if ($title !== ""){
+                        echo "<span class=\"list-title\">".$title."</span>";
+                    }
+                    if ($title !== "" && $text !== ""){
+                        echo "<br>";
+                    }
+                    if ($text !== ""){
+                        echo "<span class=\"list-text\">".$text."</span>";
+                    }
+                    echo "</li>";
+                }
+                if(sizeof(block_value('liste')["rows"]) < 1){
                     for ($i = 1; $i <= 5; $i++) {
                         if (strlen(block_value('list-title-' . $i)) > 2 && strlen(block_value('list-text-' . $i)) > 2) { ?>
                             <li><span class="list-title"><?php block_field('list-title-' . $i); ?></span><br><span

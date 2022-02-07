@@ -22,18 +22,11 @@
             <p class="card-title-content"><b><?php block_field('titel'); ?></b></p>
         <?php } ?>
         <ul class="card-list">
-            <?php if (block_rows('liste')) {
-                while ( block_rows( 'liste' ) ) :
-                    block_row( 'liste' );
-                    $foo = block_sub_value( 'item' );
-                    if ( $foo ) {
-                        // Do something.
-                        echo "<li>";
-                        echo $foo;
-                        echo "</li>";
-                    }
-                endwhile;
-            } else {
+            <?php
+            foreach (block_value('liste')["rows"] as $list_item){
+            echo "<li>".$list_item['item']."</li>";
+            }
+            if(sizeof(block_value('liste')["rows"]) < 1){
                 for ($i = 1; $i <= 4; $i++) {
                     if (strlen(block_value('list_' . $i)) > 2) { ?>
                         <li><?php block_field('list_' . $i); ?></li>
