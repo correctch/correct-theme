@@ -2272,6 +2272,69 @@ select.form-input, input.form-input, textarea.form-input {
     width: 100%;
   }
 }
+.error-404 .text {
+  margin: 6em 0;
+}
+
+.error-404 .text > h3, .error-404 .text > h2 {
+  margin-bottom: 0;
+}
+
+.error-404 .text #error-image {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: -12em;
+}
+
+@media (max-width: 1000px) {
+  .error-404 .text #error-image {
+    margin-right: 0;
+  }
+}
+.error-404 .text #error-text-col {
+  padding: 18px;
+  margin-left: -5em;
+}
+
+.error-404 .text #error-text-col .error > .error-nbr {
+  font-size: 2.5em;
+  margin-right: 1rem;
+  border-right: 1px solid #3b4856;
+  padding-right: 1rem;
+}
+
+.error-404 .text #error-text-col .error > .error-text {
+  font-size: 1.5em;
+  /*! margin: auto; */
+  vertical-align: text-bottom;
+}
+
+@media (max-width: 650px) {
+  .error-404 .text .row {
+    flex-wrap: wrap-reverse;
+  }
+
+  .error-404 .text .col {
+    flex: 0 0 100%;
+  }
+
+  .error-404 .text #error-text-col {
+    margin-left: 0;
+  }
+
+  .error-404 .text #error-image-col {
+    display: none;
+  }
+}
+.mt-2 {
+  margin-top: 1em;
+}
+
+.mt-4 {
+  margin-top: 2em;
+}
+
 * {
   box-sizing: border-box;
   font-size: 18px;
@@ -2339,8 +2402,8 @@ h1 {
 }
 h2 {
   font-size: 2rem;
-  margin-top: 2.25em;
-  margin-bottom: 2.25em;
+  margin-top: 1.75em;
+  margin-bottom: 1.75em;
 }
 
 @media (max-width: 992px) {

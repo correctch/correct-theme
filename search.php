@@ -34,7 +34,7 @@
                             <a class="link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h4>
                         <?php the_excerpt(); ?>
-                        <a class="post-box-action button" href="<?php the_permalink(); ?>">weiter lesen</a>
+                        <a class="post-box-action button" href="<?php the_permalink(); ?>">Weiterlesen</a>
                     </div>
                 <?php endwhile; ?>
             </div>

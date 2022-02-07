@@ -19,20 +19,33 @@
     </div>
     <div class="card-content">
         <?php if (strlen(block_value('titel')) > 2 && block_value('type') === 'person') { ?>
-        <p class="card-title-content"><b><?php block_field('titel'); ?></b></p>
+            <p class="card-title-content"><b><?php block_field('titel'); ?></b></p>
         <?php } ?>
         <ul class="card-list">
-            <?php for ($i = 1; $i <= 4; $i++) {
-                if (strlen(block_value('list_' . $i)) > 2) { ?>
-                    <li><?php block_field('list_' . $i); ?></li>
-                <?php }
+            <?php if (block_rows('liste')) {
+                while ( block_rows( 'liste' ) ) :
+                    block_row( 'liste' );
+                    $foo = block_sub_value( 'item' );
+                    if ( $foo ) {
+                        // Do something.
+                        echo "<li>";
+                        echo $foo;
+                        echo "</li>";
+                    }
+                endwhile;
+            } else {
+                for ($i = 1; $i <= 4; $i++) {
+                    if (strlen(block_value('list_' . $i)) > 2) { ?>
+                        <li><?php block_field('list_' . $i); ?></li>
+                    <?php }
+                }
             } ?>
         </ul>
         <?php if (strlen(block_value('text')) > 2) { ?><?php block_field('text'); ?><?php } ?>
 
         <?php if (strlen(block_value('catchphrase')) > 2) { ?><p
                 class="card-catchphrase"><?php block_field('catchphrase'); ?></p><?php } ?>
-        <?php if (block_value('url') !== "") { ?><a href="<?php block_field('url'); ?>" class="card-link button">
+        <?php if (block_value('url') !== "") { ?><a href="<?php block_field('url'); ?>" <?php if (block_value('new-tab') == 1): echo "target=\"_blank\""; endif; ?> class="card-link button">
             <?php if (block_value('button-text') !== "") {
                 block_field('button-text');
             } else {

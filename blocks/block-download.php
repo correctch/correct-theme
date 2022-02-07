@@ -62,7 +62,7 @@ $is_account = strlen($_COOKIE['hubspotRegistration']) > 0;
             <?php } ?>
             <?php
             if (block_value('blog')->post_title !== 'Downloads' && strlen(block_value('blog-button-text')) > 6) { ?>
-                <div><a target="_blank" href="<?php echo get_permalink(block_value('blog')->ID); ?>"
+                <div><a <?php if (block_value('new-tab') == 1): echo "target=\"_blank\""; endif; ?> href="<?php echo get_permalink(block_value('blog')->ID); ?>"
                         class="button"><?php block_field('blog-button-text') ?? 'Zum Blogbeitrag' ?></a></div>
             <?php } ?>
         </div>

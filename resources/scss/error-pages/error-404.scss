@@ -1,0 +1,55 @@
+.error-404 {
+  .text {
+    margin: 6em 0;
+
+    > h3, > h2 {
+      margin-bottom: 0;
+    }
+
+    #error-image {
+      width: 100%;
+      object-fit: contain;
+      margin-right: -12em;
+      @media (max-width: 1000px) {
+        margin-right: 0;
+      }
+    }
+
+    #error-text-col {
+      padding: 18px;
+      margin-left: -5em;
+
+      .error {
+        > .error-nbr {
+          font-size: 2.5em;
+          margin-right: 1rem;
+          border-right: 1px solid #3b4856;
+          padding-right: 1rem;
+        }
+
+        > .error-text {
+          font-size: 1.5em; /*! margin: auto; */
+          vertical-align: text-bottom;
+        }
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .row {
+        flex-wrap: wrap-reverse;
+      }
+      .col {
+        flex: 0 0 100%;
+      }
+      #error-text-col {
+        margin-left: 0;
+      }
+
+      #error-image-col {
+        display: none;
+      }
+    }
+
+  }
+}
