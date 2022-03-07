@@ -23,16 +23,18 @@
         <?php } ?>
         <ul class="card-list">
             <?php
-            foreach (block_value('liste')["rows"] as $list_item){
-            echo "<li>".$list_item['item']."</li>";
-            }
-            if(sizeof(block_value('liste')["rows"]) < 1){
-                for ($i = 1; $i <= 4; $i++) {
-                    if (strlen(block_value('list_' . $i)) > 2) { ?>
-                        <li><?php block_field('list_' . $i); ?></li>
-                    <?php }
-                }
-            } ?>
+               if(is_array(block_value('liste'))){
+		    foreach (block_value('liste')["rows"] as $list_item){
+		   	 echo "<li>".$list_item['item']."</li>";
+		    }
+		    if(sizeof(block_value('liste')["rows"]) < 1){
+		        for ($i = 1; $i <= 4; $i++) {
+		            if (strlen(block_value('list_' . $i)) > 2) { ?>
+		                <li><?php block_field('list_' . $i); ?></li>
+		            <?php }
+		        }
+		    }
+             } ?>
         </ul>
         <?php if (strlen(block_value('text')) > 2) { ?><?php block_field('text'); ?><?php } ?>
 
