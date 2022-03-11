@@ -201,7 +201,7 @@ $(function(){
         $('body').toggleClass('nav-is-toggled');
     });
 
-    const ele = document.getElementsByClassName('team-group')[0];
+    const ele = document.getElementsByClassName('team-group')[0].firstChild;
     let pos = { top: 0, left: 0, x: 0, y: 0 };
 
     const mouseDownHandler = function (e) {
