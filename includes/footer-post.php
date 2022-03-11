@@ -22,7 +22,7 @@ if ($the_query->have_posts()) :
                 <p class="main-color">
                      <span class="title">
                         <?php if ($on_post) { ?>
-                            Weiterer Beitrag lesen
+                            Weiteren Beitrag lesen
                         <?php } else { ?>
                             Blog
                         <?php } ?>

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .doc-group{
   margin-left: $margin-diff;
   max-width: $container-max-width;
@@ -23,7 +25,7 @@
       min-width: calc(33.33% - 20px);
 
       @include breakpoint('lg') {
-        min-width: calc(50% - #{$gap/2});
+        min-width: calc(50% - #{math.div($gap,2)});
       }
 
       @include breakpoint('sm') {
@@ -83,7 +85,7 @@
   }
 
   @include breakpoint('sm', 'max'){
-    margin-left: 0px;
+    margin-left: 0;
     width: 100%;
   }
 }

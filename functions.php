@@ -279,6 +279,17 @@ function my_theme_dependencies()
         echo '<div class="error"><p>' . __('Achtung: Das Theme benötigt Block Lab um zu funkionieren.', 'my-theme') . '</p></div>';
 }
 
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function custom_excerpt_length( $length ) {
+    return 35;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 include('functions/custom-shortcodes.php');
 include('functions/menu-walker.php');
 ?>

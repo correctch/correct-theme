@@ -394,17 +394,17 @@ li {
   z-index: 5;
   text-align: center;
   @media (max-width: 575.98px) {
-    width: 75vw;
+    width: 80vw;
   }
 
   #main-image-text {
     text-align: center;
     @media(max-width: 576px) {
-      font-size: 2.2rem;
-      padding: 0 15px;
+      font-size: 2rem;
+      padding: 0;
     }
     @media (max-width: 405px) {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
     color: white !important;
   }

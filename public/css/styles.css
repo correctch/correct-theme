@@ -1765,6 +1765,7 @@ select.form-input, input.form-input, textarea.form-input {
 }
 
 .custom-citation .citation__image-wrapper img {
+  max-width: 7em;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1772,6 +1773,17 @@ select.form-input, input.form-input, textarea.form-input {
   width: inherit;
 }
 
+@media (max-width: 576px) {
+  .custom-citation .citation__image-wrapper, .custom-citation .citation__details {
+    width: 100%;
+    text-align: center;
+  }
+
+  .custom-citation .citation__image-wrapper .citation__from, .custom-citation .citation__details .citation__from {
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+}
 .explanation-step {
   width: 30%;
   display: inline-block;
@@ -1784,7 +1796,7 @@ select.form-input, input.form-input, textarea.form-input {
 
 @media (min-width: 1300px) {
   .explanation-step {
-    width: calc(30% + (200px/3));
+    width: calc(30% + (200px / 3));
   }
 }
 @media (min-width: 1600px) {
@@ -1842,22 +1854,14 @@ select.form-input, input.form-input, textarea.form-input {
 
 .explanation-step .step__details {
   display: none;
-  width: 150%;
-  margin-left: -25%;
+  width: 100%;
+  margin-left: 0;
 }
 
-@media (max-width: 1440px) {
-  .explanation-step .step__details {
-    width: 125%;
-    margin-left: -12.5%;
-  }
+.explanation-step .step__details .step__details-list {
+  padding-left: 20px;
 }
-@media (max-width: 992.5px) {
-  .explanation-step .step__details {
-    width: 100%;
-    margin-left: 0;
-  }
-}
+
 .explanation-step .read-more, .explanation-step .read-less {
   cursor: pointer;
 }
@@ -2268,7 +2272,7 @@ select.form-input, input.form-input, textarea.form-input {
 }
 @media (max-width: 576px) {
   .doc-group {
-    margin-left: 0px;
+    margin-left: 0;
     width: 100%;
   }
 }
@@ -2730,7 +2734,7 @@ li {
 
 @media (max-width: 575.98px) {
   #image-text-wrapper {
-    width: 75vw;
+    width: 80vw;
   }
 }
 #image-text-wrapper #main-image-text {
@@ -2740,13 +2744,13 @@ li {
 
 @media (max-width: 576px) {
   #image-text-wrapper #main-image-text {
-    font-size: 2.2rem;
-    padding: 0 15px;
+    font-size: 2rem;
+    padding: 0;
   }
 }
 @media (max-width: 405px) {
   #image-text-wrapper #main-image-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 #image-text-wrapper #main-subheader {

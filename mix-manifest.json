@@ -1,3 +1,5 @@
 {
-    "/main.js": "/main.js"
+    "/public/js/app.js": "/public/js/app.js",
+    "/public/js/non-defer.js": "/public/js/non-defer.js",
+    "/public/css/styles.css": "/public/css/styles.css"
 }

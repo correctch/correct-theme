@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @include breakpoint('lg','min'){
   .mobile-menu {
     display: none;
@@ -547,7 +549,7 @@
     background-color: transparent;
     position: absolute;
     z-index: 2;
-    top: ($mobile-header-height - 30px)/2;
+    top: math.div(($mobile-header-height - 30px), 2);
     right: $gap;
     border: none;
     width: 36px;

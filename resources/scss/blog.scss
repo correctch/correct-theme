@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
  * Style für Blog Page und Single Posts
  */
@@ -23,15 +25,15 @@ $margin-side: 1em;
 
 .post-box.col {
   flex: 1;
-  max-width: calc(33.33% - #{$gap/3*2});
-  min-width: calc(33.33% - #{$gap/3*2});
+  max-width: calc(33.33% - #{math.div($gap,3)*2});
+  min-width: calc(33.33% - #{math.div($gap,3)*2});
   min-height: 730px;
   position: relative;
   background: $background-blue;
 
   @include breakpoint('xl') {
-    max-width: calc(50% - #{$gap/2});
-    min-width: calc(50% - #{$gap/2});
+    max-width: calc(50% - #{math.div($gap,2)});
+    min-width: calc(50% - #{math.div($gap,2)});
     min-height: 660px;
   }
 

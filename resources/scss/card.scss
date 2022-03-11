@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .card {
   position: relative;
   .img-wrapper{
@@ -124,15 +126,15 @@
     justify-content: left;
     .card {
       flex-grow: 1;
-      max-width: calc(33.33% - #{$gap*2/3});
+      max-width: calc(33.33% - #{math.div($gap*2,3)});
       position: relative;
-      min-width: calc(33.33% - #{$gap*2/3});
+      min-width: calc(33.33% - #{math.div($gap*2,3)});
       p, span.card-title {
         color: #ffffff;
       }
 
       @include breakpoint('lg') {
-        min-width: calc(50% - #{$gap/2});
+        min-width: calc(50% - #{math.div($gap,2)});
       }
 
       @include breakpoint('sm') {
