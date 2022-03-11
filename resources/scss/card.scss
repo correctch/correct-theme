@@ -116,6 +116,35 @@
   max-width: $container-max-width;
   width: 100vw;
   overflow-x: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: grab;
+
+  // slight overlay
+  &:before, &:after {
+    width: 50px;
+    content:'';
+    display:block;
+    position:absolute;
+    height:100%;
+    top:0;
+    z-index: 1;
+  }
+
+  &:before {
+    left: - ($gap + 60px);
+    background: linear-gradient(to right, $lightgrey 0%,rgba(255,255,255,0) 100%);
+  }
+
+  &:after {
+    right: - ($gap + 60px);
+    background: linear-gradient(to left, $lightgrey 0%,rgba(255,255,255,0) 100%);
+  }
+
+  img {
+    pointer-events: none;
+  }
+
 
   @include breakpoint('sm'){
      margin-bottom: 2em;
@@ -126,9 +155,9 @@
     justify-content: left;
     .card {
       flex-grow: 1;
-      max-width: calc(33.33% - #{math.div($gap*2,3)});
+      max-width: calc(33.3333% - #{math.div($gap*2 + 60px,3)});
       position: relative;
-      min-width: calc(33.33% - #{math.div($gap*2,3)});
+      min-width: calc(33.3333% - #{math.div($gap*2 + 60px,3)});
       p, span.card-title {
         color: #ffffff;
       }

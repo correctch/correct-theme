@@ -10,7 +10,7 @@
 @import "offers";
 @import "card";
 @import "advantages";
-@import "cutsom-blocks";
+@import "custom-blocks";
 @import "bootstrap-form";
 @import "landing_pages";
 @import "modal";
@@ -51,6 +51,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
   background: $lightgrey;
+  overflow-x: hidden;
 
   @include breakpoint('lg') {
     padding-top: $mobile-header-height;

@@ -1662,6 +1662,34 @@ select.form-input, input.form-input, textarea.form-input {
   max-width: 1250px;
   width: 100vw;
   overflow-x: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.team-group:before, .team-group:after {
+  width: 50px;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.team-group:before {
+  left: -90px;
+  background: linear-gradient(to right, #f0f0f0 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.team-group:after {
+  right: -90px;
+  background: linear-gradient(to left, #f0f0f0 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.team-group img {
+  pointer-events: none;
 }
 
 @media (max-width: 576px) {
@@ -1677,9 +1705,9 @@ select.form-input, input.form-input, textarea.form-input {
 
 .team-group > .wp-block-group__inner-container .card {
   flex-grow: 1;
-  max-width: calc(33.33% - 20px);
+  max-width: calc(33.3333% - 40px);
   position: relative;
-  min-width: calc(33.33% - 20px);
+  min-width: calc(33.3333% - 40px);
 }
 
 .team-group > .wp-block-group__inner-container .card p, .team-group > .wp-block-group__inner-container .card span.card-title {
@@ -2367,6 +2395,7 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   background: #f0f0f0;
+  overflow-x: hidden;
 }
 
 @media (max-width: 992px) {
