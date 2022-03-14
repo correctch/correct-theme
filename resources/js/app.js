@@ -133,15 +133,15 @@ $(function () {
             $('.modal.active').each(function (index, elem) {
                 $(this).removeClass('active');
             })
-         //   $('body').removeClass('modal-toggled')
-         //   $('body').css('overflow', 'auto')
+            //   $('body').removeClass('modal-toggled')
+            //   $('body').css('overflow', 'auto')
         }
     });
 
     $('.modal-button').click(function () {
         let unique = $(this).data('modal-target');
-        $('#'+unique).css('display', "block");
-        $('#'+unique).addClass('active');
+        $('#' + unique).css('display', "block");
+        $('#' + unique).addClass('active');
         $('body').css('overflow', 'hidden')
     });
 
@@ -184,10 +184,10 @@ window.addEventListener('message', event => {
     if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
         setCookie('hubspotRegistration', event.data.id, 365);
         is_hubspot_user = true;
-        $('.download-direct').each(function (index, elem){
+        $('.download-direct').each(function (index, elem) {
             $(this).css('display', 'inline-block');
         });
-        $('.modal-button').each(function (index, elem){
+        $('.modal-button').each(function (index, elem) {
             $(this).css('display', 'none');
         });
     }
@@ -196,52 +196,64 @@ window.addEventListener('message', event => {
 
 // JS Script to load in header
 
-$(function(){
-    $('button.menu-toggle').on('click', function(){
+$(function () {
+    $('button.menu-toggle').on('click', function () {
         $('body').toggleClass('nav-is-toggled');
     });
 
-    const ele = document.getElementsByClassName('team-group')[0].firstChild;
     let pos = { top: 0, left: 0, x: 0, y: 0 };
+    const elements = document.getElementsByClassName('team-group');
+    let mouseDownHandlers = [];
+    let mouseUpHandlers = [];
+    let mouseMoveHandlers = [];
+    let viewPortWidth = window.innerWidth;
 
-    const mouseDownHandler = function (e) {
-        ele.style.cursor = 'grabbing';
-        ele.style.userSelect = 'none';
+    for(let i = 0; i < elements.length; i++) {
+        let ele = elements[i].firstChild;
+        let cards = $(ele).children('.card').length;
 
-        pos = {
-            // The current scroll
-            left: ele.scrollLeft,
-            top: ele.scrollTop,
-            // Get the current mouse position
-            x: e.clientX,
-            y: e.clientY,
+        if(viewPortWidth > 1250 && cards < 4) {
+            $(elements[i]).addClass('no-arrows');
+        } else if (viewPortWidth > 576 && cards < 3) {
+            $(elements[i]).addClass('no-arrows');
+        }
+
+        mouseDownHandlers[i] = function (e) {
+            ele.style.cursor = 'grabbing';
+            ele.style.userSelect = 'none';
+
+            pos = {
+                // The current scroll
+                left: ele.scrollLeft,
+                top: ele.scrollTop,
+                // Get the current mouse position
+                x: e.clientX,
+                y: e.clientY,
+            };
+
+            document.addEventListener('mousemove', mouseMoveHandlers[i]);
+            document.addEventListener('mouseup', mouseUpHandlers[i]);
         };
 
-        document.addEventListener('mousemove', mouseMoveHandler);
-        document.addEventListener('mouseup', mouseUpHandler);
-    };
+        ele.addEventListener('mousedown', mouseDownHandlers[i]);
 
-    ele.addEventListener('mousedown', mouseDownHandler);
+        mouseUpHandlers[i] = function () {
+            document.removeEventListener('mousemove', mouseMoveHandlers[i]);
+            document.removeEventListener('mouseup', mouseUpHandlers[i]);
 
+            ele.style.cursor = 'grab';
+            ele.style.removeProperty('user-select');
+        };
 
+        mouseMoveHandlers[i] = function (e) {
+            // How far the mouse has been moved
+            const dx = e.clientX - pos.x;
+            const dy = e.clientY - pos.y;
 
-
-    const mouseUpHandler = function () {
-        document.removeEventListener('mousemove', mouseMoveHandler);
-        document.removeEventListener('mouseup', mouseUpHandler);
-
-        ele.style.cursor = 'grab';
-        ele.style.removeProperty('user-select');
-    };
-
-    const mouseMoveHandler = function (e) {
-        // How far the mouse has been moved
-        const dx = e.clientX - pos.x;
-        const dy = e.clientY - pos.y;
-
-        // Scroll the element
-        ele.scrollTop = pos.top - dy;
-        ele.scrollLeft = pos.left - dx;
-    };
+            // Scroll the element
+            ele.scrollTop = pos.top - dy;
+            ele.scrollLeft = pos.left - dx;
+        };
+    }
 })
 
