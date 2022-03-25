@@ -30,6 +30,7 @@
   box-sizing: border-box;
   font-size: 18px;
   color: $background-blue;
+
   @include breakpoint('xl') {
     font-size: 17px;
   }

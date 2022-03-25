@@ -29,6 +29,24 @@
             crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/non-defer.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/app.js" defer></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/public/hyphens/Hyphenopoly_Loader.js"></script>
+    <script>
+        Hyphenopoly.config({
+            require: {
+                "de": "FORCEHYPHENOPOLY"//"Silbentrennungsalgorithmus",
+            },
+            paths: {
+                "patterndir": "<?php echo get_template_directory_uri(); ?>/public/hyphens/patterns/", //path to the directory of pattern files
+                "maindir": "<?php echo get_template_directory_uri(); ?>/public/hyphens/" //path to the directory where the other ressources are stored
+            },
+            setup: {
+                exceptions: {
+                    "global": "Hotellerie, Hotellerie-" //language-specific exceptions
+                },
+                defaultLanguage: "de"
+            }
+        });
+    </script>
     <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBS0LZ9WJC"></script>
     <!-- Google Tag Manager -->
@@ -39,7 +57,7 @@
         })(window,document,'script','dataLayer','GTM-N4RN7D2');</script>
     <!-- End Google Tag Manager -->
 </head>
-<body <?php if (isset($page) && $page === 'landing'){echo 'class="landing-page"';} ?>>
+<body class="hyphenate <?php if (isset($page) && $page === 'landing'){echo 'landing-page';} ?>">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4RN7D2"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
