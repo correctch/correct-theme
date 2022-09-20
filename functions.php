@@ -14,6 +14,7 @@ function theme_enqueue_styles()
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
+
 function theme_scripts()
 {
     wp_enqueue_script('jquery');

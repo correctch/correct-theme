@@ -1,7 +1,7 @@
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
+/*
 import Vue from 'vue/dist/vue.common.js';
 
 window.Vue = Vue;
@@ -9,12 +9,13 @@ Vue.component('most-used-templates', require('./components/MostUsed/most-used-te
 Vue.component('topic-templates', require('./components/TopicTemplates/templates-of-topic').default);
 
 const app = new Vue({}).$mount('#app');
-
+*/
 // JS Script to load as last
-
 /**
  * Accordion
  */
+import $ from 'jquery';
+
 $(".accordion-header").click(function () {
     $(this).next('.accordion-content').slideToggle();
     $(this).parent().toggleClass("open");
