@@ -118,12 +118,15 @@ $(function () {
         return (index + 1) % 3 == 0;
     }).addClass("third");
 
-    var iframes = $('iframe');
+    let iframes = $('iframe');
     iframes.each(function (index, elem) {
-        console.log($(elem))
-        console.log(index)
         if ($(elem).length) {
-            $(elem).attr('src', $(elem).attr('src') + "&title=0&portrait=0&byline=0");
+            let src = $(elem).attr('src');
+
+            if(src.search('vimeo') !== -1) {
+                $(elem).attr('src', src + "&title=0&portrait=0&byline=0");
+            }
+
             return false;
         }
         return true;
