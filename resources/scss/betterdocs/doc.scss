@@ -18,6 +18,10 @@
 }
 
 .betterdocs-categories-wrap{
+  a:hover{
+    color: $yellow!important;
+    text-decoration: underline!important;
+  }
   a.active{
     color: $yellow!important;
     &:hover{

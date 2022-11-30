@@ -2361,6 +2361,11 @@ div#payment ul.wc_payment_methods li.wc_payment_method {
   border-right-color: #3b4856 !important;
 }
 
+.betterdocs-categories-wrap a:hover {
+  color: #e49d22 !important;
+  text-decoration: underline !important;
+}
+
 .betterdocs-categories-wrap a.active {
   color: #e49d22 !important;
 }
