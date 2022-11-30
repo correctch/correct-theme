@@ -1,0 +1,54 @@
+.betterdocs-credit{
+  display: none!important;
+}
+
+.betterdocs-single-wraper{
+  margin-bottom: -4em!important;
+}
+
+.docs-single-cat-wrap{
+  margin: 0!important;
+}
+
+.docs-item-count, .docs-item-count > span{
+  background-color: $background-blue!important;
+}
+.docs-cat-title-wrap.active-title{
+  border-right-color: $background-blue!important;
+}
+
+.betterdocs-categories-wrap{
+  a.active{
+    color: $yellow!important;
+    &:hover{
+      text-decoration: underline!important;
+    }
+  }
+}
+
+.docs-cat-heading{
+  color: $background-blue!important;
+}
+.docs-cat-title-inner{
+  border-color: $background-blue!important;
+}
+
+.betterdocs-breadcrumb-item.current > span{
+    color: $yellow!important;
+}
+
+.betterdocs-tags > a{
+  color: $yellow!important;
+  &:hover{
+    text-decoration: underline!important;
+  }
+}
+
+.docs-cat-link-btn{
+  color: $background-blue!important;
+  border-color: $background-blue!important;
+  &:hover{
+    background: $background-blue!important;
+    color: white!important;
+  }
+}
