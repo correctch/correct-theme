@@ -1,15 +1,39 @@
-.slick-slide{
-  padding: 1.25em!important;
+.slick-slider{
+  margin-bottom: 2em;;
+  @media screen and (max-width: 576px) {
+    padding: 0em 1em;
+    .slick-next {
+      right: -8px!important;
+    }
+    .slick-prev {
+      left: -8px!important;
+    }
+  }
+}
+.slick-slide {
+  padding: 1.25em !important;
 
-  .wp-block-image{
+  @media screen and (max-width: 576px) {
+      justify-content: center;
+      text-align: center;
+      align-self: center;
+      display: flex!important;
+
+  }
+
+  .wp-block-image {
     margin: 0;
     height: 100%;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
-     > a {
-       align-self: center;
-       display: inline-block;
-     }
+
+    @media screen and (max-width: 576px) {
+      max-height: 300px;
+    }
+    > a {
+      align-self: center;
+      display: inline-block;
+    }
   }
 }

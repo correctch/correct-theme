@@ -1,7 +1,7 @@
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
+/*
 import Vue from 'vue/dist/vue.common.js';
 
 window.Vue = Vue;
@@ -9,12 +9,13 @@ Vue.component('most-used-templates', require('./components/MostUsed/most-used-te
 Vue.component('topic-templates', require('./components/TopicTemplates/templates-of-topic').default);
 
 const app = new Vue({}).$mount('#app');
-
+*/
 // JS Script to load as last
-
 /**
  * Accordion
  */
+import $ from 'jquery';
+
 $(".accordion-header").click(function () {
     $(this).next('.accordion-content').slideToggle();
     $(this).parent().toggleClass("open");
@@ -117,12 +118,15 @@ $(function () {
         return (index + 1) % 3 == 0;
     }).addClass("third");
 
-    var iframes = $('iframe');
+    let iframes = $('iframe');
     iframes.each(function (index, elem) {
-        console.log($(elem))
-        console.log(index)
         if ($(elem).length) {
-            $(elem).attr('src', $(elem).attr('src') + "&title=0&portrait=0&byline=0");
+            let src = $(elem).attr('src');
+
+            if(src.search('vimeo') !== -1) {
+                $(elem).attr('src', src + "&title=0&portrait=0&byline=0");
+            }
+
             return false;
         }
         return true;

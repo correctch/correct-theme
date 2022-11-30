@@ -38,5 +38,32 @@
     </div>
 </div>
 <?php wp_footer(); ?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/non-defer.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/public/js/app.js" defer></script>
+<script>
+
+
+    let $ = jQuery.noConflict();
+    jQuery(function($) {
+            function setRespBreakpoints(){
+                var nbr = 1;
+                var width = $(window).width();
+                if (width > 1050) {
+                    nbr = 3
+                }else if(width > 700){
+                    nbr = 2;
+                }
+                return nbr;
+            }
+
+            function getWidth(){
+                return $(window).width();
+            }
+            $('.wp-block-cb-carousel').slick('slickSetOption', 'slidesToShow',setRespBreakpoints());
+            $(window).resize(function() {
+                $('.wp-block-cb-carousel').slick('slickSetOption', 'slidesToShow', setRespBreakpoints());
+            });
+    });
+</script>
 </body>
 </html>
