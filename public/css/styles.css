@@ -2374,6 +2374,11 @@ div#payment ul.wc_payment_methods li.wc_payment_method {
   text-decoration: underline !important;
 }
 
+.betterdocs-hierarchial-toc a:hover {
+  color: #e49d22 !important;
+  text-decoration: underline !important;
+}
+
 .docs-cat-heading {
   color: #3b4856 !important;
 }
@@ -2402,6 +2407,10 @@ div#payment ul.wc_payment_methods li.wc_payment_method {
 .docs-cat-link-btn:hover {
   background: #3b4856 !important;
   color: white !important;
+}
+
+.betterdocs-print-btn {
+  background-color: #3b4856 !important;
 }
 
 .mt-2 {
