@@ -1,0 +1,15 @@
+.slick-slide{
+  padding: 1.25em!important;
+
+  .wp-block-image{
+    margin: 0;
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+     > a {
+       align-self: center;
+       display: inline-block;
+     }
+  }
+}
