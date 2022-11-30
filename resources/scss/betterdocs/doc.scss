@@ -30,6 +30,13 @@
   }
 }
 
+.betterdocs-hierarchial-toc{
+  a:hover{
+    color: $yellow!important;
+    text-decoration: underline!important;
+  }
+}
+
 .docs-cat-heading{
   color: $background-blue!important;
 }
