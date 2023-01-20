@@ -1,69 +1,93 @@
-.betterdocs-credit{
-  display: none!important;
+.betterdocs-credit {
+  display: none !important;
 }
 
-.betterdocs-single-wraper{
-  margin-bottom: -4em!important;
+.betterdocs-single-wraper {
+  margin-bottom: -4em !important;
 }
 
-.docs-single-cat-wrap{
-  margin: 0!important;
+.docs-single-cat-wrap {
+  margin: 0 !important;
 }
 
-.docs-item-count, .docs-item-count > span{
-  background-color: $background-blue!important;
-}
-.docs-cat-title-wrap.active-title{
-  border-right-color: $background-blue!important;
+.docs-item-count, .docs-item-count > span {
+  background-color: $background-blue !important;
 }
 
-.betterdocs-categories-wrap{
-  a:hover{
-    color: $yellow!important;
-    text-decoration: underline!important;
+.docs-cat-title-wrap.active-title {
+  border-right-color: $background-blue !important;
+}
+
+.betterdocs-categories-wrap {
+  a:hover {
+    color: $yellow !important;
+    text-decoration: underline !important;
   }
-  a.active{
-    color: $yellow!important;
-    &:hover{
-      text-decoration: underline!important;
+
+  a.active {
+    color: $yellow !important;
+
+    &:hover {
+      text-decoration: underline !important;
     }
   }
 }
 
-.betterdocs-hierarchial-toc{
-  a:hover{
-    color: $yellow!important;
-    text-decoration: underline!important;
+.betterdocs-hierarchial-toc {
+  a:hover {
+    color: $yellow !important;
+    text-decoration: underline !important;
   }
 }
 
-.docs-cat-heading{
-  color: $background-blue!important;
-}
-.docs-cat-title-inner{
-  border-color: $background-blue!important;
+.docs-cat-heading {
+  color: $background-blue !important;
 }
 
-.betterdocs-breadcrumb-item.current > span{
-    color: $yellow!important;
+.docs-cat-title-inner {
+  border-color: $background-blue !important;
 }
 
-.betterdocs-tags > a{
-  color: $yellow!important;
-  &:hover{
-    text-decoration: underline!important;
+.betterdocs-breadcrumb-item.current > span {
+  color: $yellow !important;
+}
+
+.betterdocs-tags > a {
+  color: $yellow !important;
+
+  &:hover {
+    text-decoration: underline !important;
   }
 }
 
-.docs-cat-link-btn{
-  color: $background-blue!important;
-  border-color: $background-blue!important;
-  &:hover{
-    background: $background-blue!important;
-    color: white!important;
+.docs-cat-link-btn {
+  color: $background-blue !important;
+  border-color: $background-blue !important;
+
+  &:hover {
+    background: $background-blue !important;
+    color: white !important;
   }
 }
 
-.betterdocs-print-btn{
-  background-color: $background-blue!important;
+.betterdocs-print-btn {
+  background-color: $background-blue !important;
+}
+
+h1#betterdocs-entry-title {
+  text-transform: capitalize;
+}
+
+#betterdocs-single-content {
+  h2, h3 {
+    text-align: left;
+  }
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }

@@ -20,14 +20,6 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 .fade-in {
   animation: fadeIn ease 10s;
   -webkit-animation: fadeIn ease 10s;
@@ -37,14 +29,6 @@
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -1585,7 +1569,6 @@ select.form-input, input.form-input, textarea.form-input {
   margin-left: -105px;
   max-width: 1250px;
   width: 100vw;
-  cursor: -webkit-grab;
   cursor: grab;
   position: relative;
 }
@@ -2070,16 +2053,6 @@ select.form-input, input.form-input, textarea.form-input {
 }
 
 /* Add Animation */
-@-webkit-keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
 @keyframes animatetop {
   from {
     top: -300px;
@@ -2413,6 +2386,23 @@ div#payment ul.wc_payment_methods li.wc_payment_method {
   background-color: #3b4856 !important;
 }
 
+h1#betterdocs-entry-title {
+  text-transform: capitalize;
+}
+
+#betterdocs-single-content h2, #betterdocs-single-content h3 {
+  text-align: left;
+}
+
+#betterdocs-single-content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+#betterdocs-single-content h3 {
+  font-size: 1.5rem;
+}
+
 .mt-2 {
   margin-top: 1em;
 }
@@ -2583,7 +2573,6 @@ strong {
 @media (min-width: 992px) {
   #header {
     padding: 1.5rem 15px;
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 9999;
