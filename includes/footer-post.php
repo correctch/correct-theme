@@ -23,9 +23,9 @@ if ($the_query->have_posts()) :
                      <span class="title">
                         <?php if ($on_post) { ?>
                             Weiteren Beitrag lesen
-                        <?php } else { ?>
-                            Blog
-                        <?php } ?>
+                        <?php } else {
+                            foreach(get_the_category() as $cat) { echo $cat->cat_name; break; };
+                        } ?>
                     </span>
                     <br>
                     <?php the_title(); ?></p>
